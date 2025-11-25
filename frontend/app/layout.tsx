@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Providers from './Providers';
+import Navigation from '../components/Navigation/Navigation';
 
 export const metadata: Metadata = {
   title: 'Authenticate Me',
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navigation />
+          {children}
+        </Providers>
       </body>
     </html>
   );

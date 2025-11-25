@@ -5,24 +5,20 @@ import { Provider } from 'react-redux';
 import { store } from '../store/store';
 import { restoreCSRF, csrfFetch } from '../store/csrf';
 import { sessionActions, restoreUser } from '../store/session';
+import { ModalProvider, Modal } from '../context/Modal';
 
-interface ProvidersProps {
-  children: ReactNode;
-}
-
-export default function Providers({ children }: ProvidersProps) {
+export default function Providers({ children }: { children: ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     const run = async () => {
       if (process.env.NODE_ENV !== 'production') {
         await restoreCSRF();
-
         (window as any).csrfFetch = csrfFetch;
         (window as any).store = store;
         (window as any).sessionActions = sessionActions;
       }
 
-      // Always restore user, dev and prod
       await (store.dispatch as any)(restoreUser());
       setIsLoaded(true);
     };
@@ -30,5 +26,12 @@ export default function Providers({ children }: ProvidersProps) {
     run();
   }, []);
 
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <ModalProvider>
+        {isLoaded && children}
+        <Modal />
+      </ModalProvider>
+    </Provider>
+  );
 }

@@ -56,18 +56,48 @@ export const login = (user: {
   return response;
 };
 
+
+export const logout = () => async (dispatch: Dispatch) => {
+  const response = await csrfFetch('/api/session', {
+    method: 'DELETE',
+  });
+
+  dispatch(removeUser());
+  return response;
+};
+
+// Signup: POST /api/users
+export const signup = (user: {
+  username: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}) => async (dispatch: Dispatch) => {
+  const { username, firstName, lastName, email, password } = user;
+
+  const response = await csrfFetch('/api/users', {
+    method: 'POST',
+    body: JSON.stringify({
+      username,
+      firstName,
+      lastName,
+      email,
+      password,
+    }),
+  });
+
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
+};
+
 // Restore: GET /api/session
 export const restoreUser = () => async (dispatch: Dispatch) => {
   const response = await csrfFetch('/api/session');
   const data = await response.json();
   dispatch(setUser(data.user ?? null));
   return response;
-};
-
-// Optional: logout thunk (for later)
-export const logout = () => async (dispatch: Dispatch) => {
-  await csrfFetch('/api/session', { method: 'DELETE' });
-  dispatch(removeUser());
 };
 
 // ---- Reducer ----
@@ -93,6 +123,7 @@ export default sessionReducer;
 // Export actions namespace for dev debugging
 export const sessionActions = {
   login,
+  signup,
   restoreUser,
   logout,
   setUser,

@@ -8,7 +8,14 @@ export default function HomePage() {
 
   return (
     <main>
-      <h1>Welcome{user ? `, ${user.email}!` : '!'}</h1>
+      <h1>Welcome{user ? <ul>
+        
+        {Object.values(user).map((attribute, i) => (
+          <li key={i}>{`${attribute}`}</li>
+        ))}
+         
+      </ul>
+      : '!'}</h1>
     </main>
   );
 }
