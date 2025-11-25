@@ -44,7 +44,7 @@ module.exports = {
       },
 
       phoneNum: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING(12),
         allowNull: true,
       },
 
@@ -59,17 +59,17 @@ module.exports = {
       },
 
       city: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.STRING(52),
         allowNull: true,
       },
 
       state: {
-        type: Sequelize.STRING(50),
+        type: Sequelize.STRING(2),
         allowNull: true,
       },
 
       zipCode: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING(10),
         allowNull: true,
       },
 

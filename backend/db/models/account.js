@@ -115,29 +115,29 @@ module.exports = (sequelize, DataTypes) => {
       },
 
       city: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING(52),
         allowNull: true,
         validate: {
           len: {
-            args: [0, 100],
-            msg: 'City must be at most 100 characters.',
+            args: [0, 52],
+            msg: 'City must be at most 52 characters.',
           },
         },
       },
 
       state: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING(2),
         allowNull: true,
         validate: {
           len: {
-            args: [0, 50],
-            msg: 'State must be at most 50 characters.',
+            args: [2, 2],
+            msg: 'Please enter the abbreviated version of your state name.',
           },
         },
       },
 
       zipCode: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.STRING(10),
         allowNull: true,
         validate: {
           isValidZip(value) {
