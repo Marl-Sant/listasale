@@ -24,46 +24,45 @@ export default function Navigation() {
       </div>
 
       {/* Main Nav */}
-      <nav className="sticky top-[41px] bg-white w-full shadow-md z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
+      <nav className="sticky top-[35px] bg-white w-full shadow-md z-40">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-24">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <Link href="/">
-              <img src="/images/ListLogo.png" alt="List A Sale" className="h-25" />
+              <img src="/images/ListLogo.png" alt="List A Sale" className="h-20 md:h-20" />
             </Link>
           </div>
 
           {/* Main Links*/}
-          <ul className="hidden md:flex space-x-8 items-center flex-1 ml-8">
-            {mainLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-[#693073] font-medium tracking-wide hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: 'var(--font-darkmode)' }}
-                >
-                  {link.label}
-                </Link>
-              </li>
+          <div className="hidden md:flex items-center md:gap-2 lg:gap-4 xl:gap-4 flex-1 md:ml-4 lg:ml-8">
+            {mainLinks.map((link, index) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-medium hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base ${index > 0 ? 'md:-ml-1 lg:ml-0' : ''}`}
+                style={{ fontFamily: 'var(--font-darkmode)', color: '#693073', textDecoration: 'none' }}
+              >
+                {link.label}
+              </Link>
             ))}
-          </ul>
+          </div>
 
           {/* Right Links */}
-          <div className="hidden md:flex items-center space-x-6 ml-auto">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-6 ml-auto">
             <Link
               href="/create-listing"
-              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity"
-              style={{ fontFamily: 'var(--font-darkmode)' }}
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
-              <HiHome className="w-5 h-5" />
+              <HiHome className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
               <span>Create a Listing</span>
             </Link>
             <Link
               href="/login"
-              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity"
-              style={{ fontFamily: 'var(--font-darkmode)' }}
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
-              <HiUser className="w-5 h-5" />
+              <HiUser className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
               <span>Login/Register</span>
             </Link>
           </div>

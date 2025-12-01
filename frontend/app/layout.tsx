@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Providers from './Providers';
 import Navigation from '../components/Navigation/Navigation';
 
