@@ -48,7 +48,7 @@ export default function Navigation() {
                 />
               </Link>
             </div>
-            <div className="hidden md:flex items-center md:gap-5 lg:gap-4 xl:gap-4 md:ml-4 lg:ml-8">
+            <div className="hidden md:flex items-center md:gap-5 lg:gap-8 xl:gap-8 md:ml-4 lg:ml-8">
               {mainLinks.map((link, index) => (
                 <Link
                   key={link.href}
