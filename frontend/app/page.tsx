@@ -1,6 +1,7 @@
 'use client';
 
 import { useSelector } from 'react-redux';
+import { HiMagnifyingGlass } from 'react-icons/hi2';
 import type { RootState } from '../store/store';
 
 export default function HomePage() {
@@ -29,7 +30,7 @@ export default function HomePage() {
           <span>A smarter way to search for<br /> estate sales and vintage goods</span>
         </div>
 
-        <div className="absolute top-[70%] md:top-[62%] lg:top-[60%] xl:top-[58%] left-0 right-0 flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center w-full max-w-full px-4">
+        <div className="absolute md:top-[62%] lg:top-[60%] xl:top-[58%] left-0 right-0 flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center w-full max-w-full px-4">
           <button className="btn btn-primary btn-lg px-4 md:px-10 lg:px-12 min-w-[140px] md:min-w-[170px] lg:min-w-[180px]">
             Find Sales
           </button>
@@ -37,6 +38,19 @@ export default function HomePage() {
             Shop Online
           </button>
         </div>
+
+        {/* Search Bar */}
+        <div className="input-group border-2 border-white max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl mx-auto">
+          <input 
+            type="search" 
+            className="form-control rounded-none" 
+            placeholder="Find what you love: item, city, seller..." 
+          />
+          <button className="btn btn-primary rounded-none" type="button">
+            <HiMagnifyingGlass className="w-5 h-5" />
+          </button>
+        </div>
+
       </div>
       
       {/* Future content sections should use: */}
