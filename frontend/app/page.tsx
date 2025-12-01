@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
 import type { RootState } from '../store/store';
 import CategorySection from '../components/CategorySection/CategorySection';
+import NearYouSection from '../components/SalesNearYouSection/SalesNearYou';
 
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
@@ -74,7 +75,7 @@ export default function HomePage() {
       </div>
 
       <CategorySection />
-      
+      <NearYouSection />
     </main>
   );
 }

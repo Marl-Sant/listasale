@@ -1,20 +1,23 @@
 'use client';
 
+import Link from 'next/link';
+
 interface Category {
   id: number;
   title: string;
   image: string;
+  href: string;
 }
 
 export default function CategorySection() {
   
   const categories: Category[] = [
-    { id: 1, title: 'Antiques & Collectibles', image: '/images/cat1.jpg' },
-    { id: 2, title: 'Home Goods & Decor', image: '/images/cat2.jpg' },
-    { id: 3, title: 'Clothing & Accessories', image: '/images/cat3.jpg' },
-    { id: 4, title: 'Jewelry & Watches', image: '/images/cat4.jpg' },
-    { id: 5, title: 'Furniture & Lighting', image: '/images/cat5.jpg' },
-    { id: 6, title: 'Sports & Hobbies', image: '/images/cat6.jpg' },
+    { id: 1, title: 'Antiques & Collectibles', image: '/images/cat1.jpg', href: "#" },
+    { id: 2, title: 'Home Goods & Decor', image: '/images/cat2.jpg', href: "#" },
+    { id: 3, title: 'Clothing & Accessories', image: '/images/cat3.jpg', href: "#" },
+    { id: 4, title: 'Jewelry & Watches', image: '/images/cat4.jpg', href: "#" },
+    { id: 5, title: 'Furniture & Lighting', image: '/images/cat5.jpg', href: "#" },
+    { id: 6, title: 'Sports & Hobbies', image: '/images/cat6.jpg', href: "#" },
   ];
 
   return (
@@ -33,9 +36,11 @@ export default function CategorySection() {
       {/* Shop By Category Items */}
       <div className="flex flex-wrap justify-center xl:gap-10 md:gap-6">
         {categories.map((category) => (
-          <div 
-            key={category.id} 
+          <Link 
+            key={category.id}
+            href={category.href}
             className="flex flex-col items-center w-[13%]"
+            style={{ textDecoration: 'none', color: 'black' }}
           >
             <div className="relative aspect-square overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity w-full">
               <img 
@@ -48,8 +53,9 @@ export default function CategorySection() {
               className="font-semibold md:text-xl lg:text-1xl xl:text-2xl mt-4 text-center"
               style={{ fontFamily: 'var(--font-rig-sans)' }}
             >
-              {category.title}</span>
-          </div>
+              {category.title}
+            </span>
+          </Link>
         ))}
       </div>
 
