@@ -11,7 +11,12 @@ export default function HomePage() {
     <main>
       {/* Hero Image */}
       <div className="relative w-full aspect-video overflow-hidden flex flex-col items-center justify-center">
-        <img src="/images/firstHomeImage.jpg" alt="List A Sale" className="h-full w-full object-cover absolute inset-0"/>
+        <img 
+          src="/images/firstHomeImage.jpg" 
+          alt="List A Sale" 
+          className="h-full w-full object-cover absolute inset-0"
+          style={{ filter: 'brightness(0.8)' }}
+        />
         
         <div 
           className="absolute top-[23%] md:top-[20%] lg:top-[20%] xl:top-[21%] left-0 right-0 text-center text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold w-full max-w-full px-4" 
@@ -40,23 +45,27 @@ export default function HomePage() {
         </div>
 
         {/* Search Bar */}
-        <div className="input-group border-2 border-white max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl mx-auto">
+        <div className="input-group absolute h-12 md:top-[34%] lg:top-[26%] xl:top-[22%] max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl mx-auto">
           <input 
             type="search" 
-            className="form-control rounded-none" 
+            className="form-control rounded-none placeholder-gray-400" 
             placeholder="Find what you love: item, city, seller..." 
+            style={{ borderRadius: '0', fontFamily: 'var(--font-rig-sans)' }}
           />
-          <button className="btn btn-primary rounded-none" type="button">
-            <HiMagnifyingGlass className="w-5 h-5" />
+          <button 
+            className="btn btn-primary rounded-none" 
+            type="button"
+            style={{ backgroundColor: 'white', color: '#1288e0', borderRadius: '0', border: 'none' }}
+          >
+            <HiMagnifyingGlass 
+              className="w-5 h-5 text-[#1288e0]" 
+              style={{ strokeWidth: '2' }}
+            />
           </button>
         </div>
 
       </div>
       
-      {/* Future content sections should use: */}
-      {/* <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8"> */}
-      {/*   Content here */}
-      {/* </section> */}
     </main>
   );
 }

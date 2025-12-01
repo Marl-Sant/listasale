@@ -17,8 +17,18 @@ export default function Navigation() {
     <>
       {/* Purple Banner */}
       <div className="relative bg-[#7a2b87] text-white py-2 px-4 xl:px-0 z-50">
-        <div className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:px-0 text-sm" style={{ fontFamily: 'var(--font-rig-sans)' }}>
-          <span className="underline">Subscribe</span> to receive notifications of upcoming sales in your area.
+        <div 
+          className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:pl-2 text-sm" 
+          style={{ fontFamily: 'var(--font-rig-sans)', textDecoration: 'none' }}
+        >
+          <Link 
+            href="/subscribe" 
+            className="underline hover:no-underline" 
+            style={{ textDecoration: 'underline', color: 'white' }}
+          >
+            Subscribe
+          </Link>
+          {' '}to receive notifications of upcoming sales in your area.
         </div>
       </div>
 
@@ -30,7 +40,12 @@ export default function Navigation() {
           <div className="flex items-center">
             <div className="flex items-center">
               <Link href="/">
-                <img src="/images/ListLogo.png" alt="List A Sale" className="h-20 md:h-20" />
+                <img 
+                  src="/images/ListLogo.png" 
+                  alt="List A Sale" 
+                  className="h-20 md:h-20" 
+                  style={{ textDecoration: 'none' }}
+                />
               </Link>
             </div>
             <div className="hidden md:flex items-center md:gap-5 lg:gap-4 xl:gap-4 md:ml-4 lg:ml-8">

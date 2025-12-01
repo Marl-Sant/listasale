@@ -25,6 +25,10 @@ body {
   font-family: var(--font-rig-sans), Arial, Helvetica, sans-serif;
 }
 
+.form-control::placeholder {
+  color: #9ca3af !important;
+}
+
 #modal {
   position: fixed;
   top: 0;
