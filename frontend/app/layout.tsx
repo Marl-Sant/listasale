@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Providers from './Providers';
 import Navigation from '../components/Navigation/Navigation';
+import { CsrfBootstrapper } from './CsrfBootstrapper';
 
 export const metadata: Metadata = {
   title: 'Authenticate Me',
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <CsrfBootstrapper />
         <Providers>
           <Navigation />
           {children}
