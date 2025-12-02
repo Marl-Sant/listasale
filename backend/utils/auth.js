@@ -25,7 +25,7 @@ const setTokenCookie = (res, user) => {
     maxAge: expiresIn * 1000, 
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction && "Lax"
+    sameSite: isProduction ? 'None' : 'Lax'
   });
 
   return token;
