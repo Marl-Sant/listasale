@@ -2,10 +2,10 @@
 
 import { csrfFetch } from './csrf';
 
-export async function createCheckoutSession(priceId: string, quantity = 1) {
+export async function createCheckoutSession(quantity = 1) {
   const res = await csrfFetch('/api/stripe/create-checkout-session', {
     method: 'POST',
-    body: JSON.stringify({ priceId, quantity }),
+    body: JSON.stringify({ quantity }),
   });
 
   if (!res.ok) throw res;
