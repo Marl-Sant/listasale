@@ -50,14 +50,12 @@
 
 import Cookies from 'js-cookie';
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
-
 export async function csrfFetch(
   path: string,
   options: RequestInit = {}
 ) {
-  const url = `${API_BASE}${path}`;
+  // path should be something like '/api/session', '/api/users', etc.
+  const url = path;
 
   options.method = options.method || 'GET';
   options.headers = options.headers || {};
@@ -72,7 +70,7 @@ export async function csrfFetch(
 
   const res = await fetch(url, {
     ...options,
-    credentials: 'include', // ⬅️ critical for cookies
+    credentials: 'include', // keep this
   });
 
   if (res.status >= 400) throw res;
