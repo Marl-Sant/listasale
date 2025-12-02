@@ -13,6 +13,8 @@ const isProduction = environment === 'production';
 
 const app = express();
 
+
+
 // 1) STRIPE WEBHOOK: NO CSRF, RAW BODY
 app.post('/api/stripe/webhook', stripeWebhookRoute);
 
@@ -21,8 +23,20 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
 
+// if (!isProduction) {
+//   app.use(cors());
+// }
+
 if (!isProduction) {
-  app.use(cors());
+  app.use(cors()); // localhost dev
+} else {
+  const allowedOrigin = process.env.FRONTEND_URL; // e.g. https://listasale-frontend.onrender.com
+  app.use(
+    cors({
+      origin: allowedOrigin,
+      credentials: true
+    })
+  );
 }
 
 app.use(
