@@ -2,14 +2,11 @@
 
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store/store';
-import { createCheckoutSession } from '@/store/stripe';
+import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
-  const handleStripeRedirect = async () => {
-    const response = await createCheckoutSession()
-    window.location.href = response
-  } 
+  
   return (
     <main>
       <h1>Welcome{user ? <ul>
@@ -21,7 +18,7 @@ export default function HomePage() {
       </ul>
       : '!'}</h1>
 
-      {user ? <button onClick={handleStripeRedirect}>Buy a Listing</button> : <></>}
+      {user ? <StripeTestButton /> : <></>}
     </main>
   );
 }

@@ -9,7 +9,7 @@ export default function StripeTestButton() {
   const handleClick = async () => {
     try {
       setLoading(true);
-      const url = await createCheckoutSession('price_12345');
+      const url = await createCheckoutSession();
       window.location.href = url; // redirect to Stripe Checkout
     } catch (e) {
       console.error('Failed to create checkout session', e);
