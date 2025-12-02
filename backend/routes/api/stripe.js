@@ -8,13 +8,13 @@ router.post(
   async (req, res, next) => {
     try {
       // Optionally get user info from your session (req.user) or body
-      const { quantity = 1 } = req.body;
+      const { priceId, quantity = 1 } = req.body;
 
       const session = await stripe.checkout.sessions.create({
         mode: 'payment', // or 'payment' for one-time
         line_items: [
           {
-            price: "500", // preconfigured price in your Stripe dashboard
+            price: priceId, // preconfigured price in your Stripe dashboard
             quantity,
           },
         ],
