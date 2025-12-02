@@ -54,7 +54,7 @@ body {
   width: 90%;
 }
 
-/* Items Near You Section - Flexbox Layout */
+/* Items Near You Section */
 .item-card {
   width: 100%;
   flex-basis: 100%;

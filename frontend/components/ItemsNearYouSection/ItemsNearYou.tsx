@@ -125,7 +125,7 @@ export default function ItemsNearYouSection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9 md:py-2">
+    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9">
       {/* Section Title */}
       <div className="flex md:mb-8">
         <span 
@@ -137,7 +137,7 @@ export default function ItemsNearYouSection() {
       </div>
 
       {/* Items Grid */}
-      <div className="flex flex-wrap md:gap-6">
+      <div className="flex flex-wrap md:gap-6 justify-center">
         {items.map((item) => {
           const isFavorite = favorites.has(item.id);
           return (
@@ -260,7 +260,7 @@ export default function ItemsNearYouSection() {
       </div>
 
       {/* Explore All Button */}
-      <div className="flex justify-center md:mt-8">
+      <div className="flex justify-center md:mt-12">
         <button 
           type="button" 
           className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
