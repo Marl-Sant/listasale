@@ -148,8 +148,8 @@ export default function NearYouSection() {
             {/* Main Image */}
             <div className="relative flex items-center py-4 min-w-0 flex-shrink-0">
               <div 
-                className="relative overflow-hidden md:w-55 lg:w-80 xl:w-90" 
-                style={{ marginLeft: '1.5rem', aspectRatio: '22/16' }}>
+                className="relative overflow-hidden w-40 md:w-55 lg:w-80 xl:w-90" 
+                style={{ marginLeft: '1.5rem', aspectRatio: '19/16' }}>
                 <img 
                   src={item.image} 
                   alt={item.title} 
@@ -173,7 +173,7 @@ export default function NearYouSection() {
             </div>
             
             {/* Right Section */}
-            <div className="flex-1 flex flex-col md:p-4 lg:p-5 xl:p-6">
+            <div className="flex-1 flex flex-col p-4 relative">
               
               {/* Title */}
               <span 
@@ -243,7 +243,7 @@ export default function NearYouSection() {
 
               {/* Sub Images */}
               {item.subImages && item.subImages.length > 0 && (
-                <div className="flex justify-between gap-1 md:mt-3 lg:mt-16 xl:mt-auto overflow-x-auto">
+                <div className="flex justify-between gap-1 mt-auto overflow-x-auto">
                   {item.subImages.slice(0, 5).map((subImage, index) => {
                     const getDisplayClasses = () => {
                       if (index < 3) return '';
@@ -255,8 +255,8 @@ export default function NearYouSection() {
                     return (
                       <div 
                         key={index} 
-                        className={`relative overflow-hidden md:w-29 lg:w-30 xl:w-40 ${getDisplayClasses()}`}
-                        style={{ aspectRatio: '10.5/8.5' }}
+                        className={`relative overflow-hidden w-20 md:w-26 lg:w-32 xl:w-40 ${getDisplayClasses()}`}
+                        style={{ aspectRatio: '9.5/8.5' }}
                       >
                         <img 
                           src={subImage} 
@@ -276,16 +276,16 @@ export default function NearYouSection() {
 
       {/* Explore All Button */}
       <div className="flex justify-center mt-8 ">
-      <button 
-        type="button" 
-        className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
-        style={{ 
-          fontFamily: 'var(--font-rig-sans)' ,
-          fontSize: '18px'
-        }}
-      >
-        Explore All
-      </button>
+        <button 
+          type="button" 
+          className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
+          style={{ 
+            fontFamily: 'var(--font-rig-sans)' ,
+            fontSize: '18px'
+          }}
+        >
+          Explore All
+        </button>
       </div>
 
     </section>

@@ -5,6 +5,7 @@ import { HiMagnifyingGlass } from 'react-icons/hi2';
 import type { RootState } from '../store/store';
 import CategorySection from '../components/CategorySection/CategorySection';
 import NearYouSection from '../components/SalesNearYouSection/SalesNearYou';
+import ItemsNearYouSection from '../components/ItemsNearYouSection/ItemsNearYou';
 
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
@@ -77,6 +78,7 @@ export default function HomePage() {
 
       <CategorySection />
       <NearYouSection />
+      <ItemsNearYouSection />
     </main>
   );
 }

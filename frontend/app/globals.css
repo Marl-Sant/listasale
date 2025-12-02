@@ -53,3 +53,30 @@ body {
   max-width: 400px;
   width: 90%;
 }
+
+/* Items Near You Section - Flexbox Layout */
+.item-card {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  .item-card {
+    width: calc(50% - 0.75rem);
+    flex-basis: calc(50% - 0.75rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-card {
+    width: calc(33.333% - 1rem);
+    flex-basis: calc(33.333% - 1rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .item-card {
+    width: calc(25% - 1.125rem);
+    flex-basis: calc(25% - 1.125rem);
+  }
+}
