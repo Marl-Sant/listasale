@@ -279,7 +279,10 @@ export default function NearYouSection() {
       <button 
         type="button" 
         className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
-        style={{ fontFamily: 'var(--font-rig-sans)' }}
+        style={{ 
+          fontFamily: 'var(--font-rig-sans)' ,
+          fontSize: '18px'
+        }}
       >
         Explore All
       </button>

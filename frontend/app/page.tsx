@@ -39,13 +39,14 @@ export default function HomePage() {
 
         <div className="absolute md:top-[62%] lg:top-[60%] xl:top-[58%] left-0 right-0 flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center w-full max-w-full px-4">
           <button 
-            className="btn btn-primary btn-lg px-4 md:px-10 lg:px-12 min-w-[140px] md:min-w-[170px] lg:min-w-[180px]" 
-            style={{ fontFamily: 'var(--font-rig-sans)' }}
+            className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px]" 
+            style={{ 
+              fontFamily: 'var(--font-rig-sans)'}}
           >
             Find Sales
           </button>
           <button 
-            className="btn btn-primary btn-lg px-4 md:px-10 lg:px-12 min-w-[140px] md:min-w-[170px] lg:min-w-[180px]" 
+            className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px]" 
             style={{ fontFamily: 'var(--font-rig-sans)' }}
           >
             Shop Online
