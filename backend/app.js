@@ -57,7 +57,7 @@ app.use(
 );
 
 // 4) Your normal API routes (CSRF-protected)
-app.use('/api', routes);
+app.use(routes);
 
 // 5) 404 + error handlers unchanged ...
 app.use((_req, _res, next) => {
