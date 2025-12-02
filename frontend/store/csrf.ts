@@ -1,6 +1,9 @@
 'use client';
 
 import Cookies from 'js-cookie'
+const API_BASE =
+  process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+
 
 export async function csrfFetch(
   url: string,
@@ -40,5 +43,5 @@ export async function csrfFetch(
 
 // call this to get the "XSRF-TOKEN" cookie, should only be used in development
 export function restoreCSRF() {
-  return csrfFetch('/api/csrf/restore');
+  return csrfFetch(`${API_BASE}/api/csrf/restore`);
 }

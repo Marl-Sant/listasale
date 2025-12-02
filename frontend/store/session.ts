@@ -2,7 +2,8 @@
 
 import { Dispatch } from 'redux';
 import { csrfFetch } from './csrf';
-
+const API_BASE =
+  process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
 // ---- Types ----
 
 export interface User {
@@ -46,7 +47,7 @@ export const login = (user: {
 }) => async (dispatch: Dispatch) => {
   const { credential, password } = user;
 
-  const response = await csrfFetch('/api/session', {
+  const response = await csrfFetch(`${API_BASE}/api/session`, {
     method: 'POST',
     body: JSON.stringify({ credential, password }),
   });
@@ -58,7 +59,7 @@ export const login = (user: {
 
 
 export const logout = () => async (dispatch: Dispatch) => {
-  const response = await csrfFetch('/api/session', {
+  const response = await csrfFetch(`${API_BASE}/api/session`, {
     method: 'DELETE',
   });
 
@@ -76,7 +77,7 @@ export const signup = (user: {
 }) => async (dispatch: Dispatch) => {
   const { username, firstName, lastName, email, password } = user;
 
-  const response = await csrfFetch('/api/users', {
+  const response = await csrfFetch(`${API_BASE}/api/users`, {
     method: 'POST',
     body: JSON.stringify({
       username,
@@ -94,7 +95,7 @@ export const signup = (user: {
 
 // Restore: GET /api/session
 export const restoreUser = () => async (dispatch: Dispatch) => {
-  const response = await csrfFetch('/api/session');
+  const response = await csrfFetch(`${API_BASE}/api/session`);
   const data = await response.json();
   dispatch(setUser(data.user ?? null));
   return response;
