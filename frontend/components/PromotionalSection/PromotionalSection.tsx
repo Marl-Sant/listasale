@@ -9,17 +9,17 @@ export default function PromotionalSection() {
           
           {/* Left Text */}
           <div className="flex-1 flex flex-col justify-center md:p-5 lg:p-8 xl:p-12 text-white promotional-text">
-            <h2 
-              className="md:mb-2 lg:mb-4 xl:mb-6 font-bold promotional-title"
+            <span 
+              className="md:mb-2 lg:mb-4 xl:mb-6 font-bold promotional-title md:text-lg lg:text-xl xl:text-2xl"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
                 fontWeight: '600'
               }}
             >
               Join Our List and Stay In the Loop
-            </h2>
+            </span>
             <p 
-              className="md:mb-2 lg:mb-4 xl:mb-6 promotional-body"
+              className="md:mb-2 lg:mb-4 xl:mb-6 promotional-body md:text-sm lg:text-base xl:text-lg"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
                 fontWeight: '400'
@@ -62,17 +62,17 @@ export default function PromotionalSection() {
           
           {/* Right Text */}
           <div className="flex-1 flex flex-col justify-center md:p-5 lg:p-8 xl:p-12 text-white promotional-text">
-            <h2 
-              className="md:mb-2 lg:mb-4 xl:mb-6 font-bold promotional-title"
+            <span 
+              className="md:mb-2 lg:mb-4 xl:mb-6 font-bold promotional-title md:text-lg lg:text-xl xl:text-2xl"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
                 fontWeight: '600',
               }}
             >
               Hire a Trusted Estate Sale Professional
-            </h2>
+            </span>
             <p 
-              className="md:mb-2 lg:mb-4 xl:mb-6 promotional-body"
+              className="md:mb-2 lg:mb-4 xl:mb-6 promotional-body md:text-sm lg:text-base xl:text-lg"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
                 fontWeight: '400'

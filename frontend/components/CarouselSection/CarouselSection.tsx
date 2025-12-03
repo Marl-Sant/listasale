@@ -49,7 +49,7 @@ export default function CarouselSection() {
     setTimeout(() => setIsAutoPlaying(true), 9000);
   };
 
-  // Auto-advance carousel
+  // Auto-Scroll 
   useEffect(() => {
     if (!isAutoPlaying) return;
 
@@ -73,7 +73,7 @@ export default function CarouselSection() {
           className="w-full h-full object-cover"
         />
 
-        {/* Dark Blue Gradient Overlay */}
+        {/* Gradient Overlay */}
         <div 
           className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#002861] to-transparent"
         />

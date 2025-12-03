@@ -4,6 +4,7 @@ import './globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Providers from './Providers';
 import Navigation from '../components/Navigation/Navigation';
+import Footer from '../components/Footer/Footer';
 
 // Configure Rig Sans with all weights
 const rigSans = localFont({
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Providers>
           <Navigation />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
