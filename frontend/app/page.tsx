@@ -8,9 +8,12 @@ import NearYouSection from '../components/SalesNearYouSection/SalesNearYou';
 import ItemsNearYouSection from '../components/ItemsNearYouSection/ItemsNearYou';
 import PromotionalSection from '../components/PromotionalSection/PromotionalSection';
 import CarouselSection from '../components/CarouselSection/CarouselSection';
+import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
+import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
+
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
-
+  
   return (
     <main>
       {/* Hero Image */}

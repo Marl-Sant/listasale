@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('accounts', {
+    await queryInterface.createTable('Accounts', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -109,7 +109,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('accounts', options);
+    await queryInterface.dropTable('Accounts', options);
 
     if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
       await queryInterface.sequelize.query('DROP TYPE IF EXISTS "enum_accounts_role";');

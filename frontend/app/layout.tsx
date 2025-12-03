@@ -46,6 +46,7 @@ const darkmode = localFont({
   variable: '--font-darkmode',
   display: 'swap',
 });
+import { CsrfBootstrapper } from './CsrfBootstrapper';
 
 export const metadata: Metadata = {
   title: 'Authenticate Me',
@@ -60,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rigSans.variable} ${darkmode.variable}`}>
       <body>
+        <CsrfBootstrapper />
         <Providers>
           <Navigation />
           {children}
