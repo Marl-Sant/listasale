@@ -13,13 +13,13 @@ export default function Providers({ children }: { children: ReactNode }) {
   useEffect(() => {
     const run = async () => {
       if (process.env.NODE_ENV !== 'production') {
-        await restoreCSRF();
+        // await restoreCSRF();
         (window as any).csrfFetch = csrfFetch;
         (window as any).store = store;
         (window as any).sessionActions = sessionActions;
       }
 
-      await (store.dispatch as any)(restoreUser());
+      // await (store.dispatch as any)(restoreUser());
       setIsLoaded(true);
     };
 
