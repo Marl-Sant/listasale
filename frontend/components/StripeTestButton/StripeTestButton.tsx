@@ -20,7 +20,7 @@ export default function StripeTestButton() {
 
   return (
     <button disabled={loading} onClick={handleClick}>
-      {loading ? 'Redirecting...' : 'Subscribe'}
+      {loading ? 'Redirecting...' : 'Buy Listing Credit'}
     </button>
   );
 }

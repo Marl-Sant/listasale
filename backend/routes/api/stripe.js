@@ -30,4 +30,39 @@ router.post(
   }
 );
 
+router.post("/create-subscription-session", async (req, res, next) => {
+  try {
+    const { priceId } = req.body;
+
+    if (!priceId) {
+      return res.status(400).json({ error: "Missing priceId" });
+    }
+
+    // Must have user logged in
+    if (!req.user || !req.user.email) {
+      return res.status(401).json({ error: "Must be logged in to subscribe" });
+    }
+
+    // Create Stripe Checkout Session
+    const session = await stripe.checkout.sessions.create({
+      mode: "subscription",
+      customer_email: req.user.email,
+      line_items: [
+        {
+          price: priceId, // e.g. "price_1234" from Stripe Dashboard
+          quantity: 1
+        },
+      ],
+      success_url: `${process.env.FRONTEND_URL}/billing/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.FRONTEND_URL}/billing/cancelled`,
+      automatic_tax: { enabled: true }
+    });
+
+    return res.json({ url: session.url });
+  } catch (err) {
+    console.error("Stripe subscription error:", err);
+    next(err);
+  }
+});
+
 module.exports = router;

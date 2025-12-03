@@ -3,6 +3,7 @@
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store/store';
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
+import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
@@ -18,7 +19,7 @@ export default function HomePage() {
       </ul>
       : '!'}</h1>
 
-      {user ? <StripeTestButton /> : <></>}
+      {user ? <><StripeTestButton /> <StripeSubTestButton /></> : <></>}
     </main>
   );
 }
