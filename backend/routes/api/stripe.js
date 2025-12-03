@@ -34,6 +34,9 @@ router.post("/create-subscription-session", async (req, res, next) => {
   try {
     const { priceId } = req.body;
 
+    console.log('➡️ /create-subscription-session body:', req.body);
+    console.log('➡️ req.user:', req.user);
+
     if (!priceId) {
       return res.status(400).json({ error: "Missing priceId" });
     }
@@ -58,10 +61,15 @@ router.post("/create-subscription-session", async (req, res, next) => {
       automatic_tax: { enabled: true }
     });
 
+     console.log('✅ Created subscription session:', session.id);
+
     return res.json({ url: session.url });
   } catch (err) {
     console.error("Stripe subscription error:", err);
-    next(err);
+    // next(err);
+    console.error("❌ Stripe subscription error:", err);
+    // TEMP: surface the message so we can see it in the Network tab
+    return res.status(500).json({ error: err.message || 'Internal error' });
   }
 });
 
