@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { jwtConfig } = require('../config');
-const { User } = require('../db/models');
+const { Account } = require('../db/models');
 
 const { secret, expiresIn } = jwtConfig;
 
@@ -25,7 +25,7 @@ const setTokenCookie = (res, user) => {
     maxAge: expiresIn * 1000, 
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction ? 'None' : 'Lax'
+    sameSite: isProduction && "Lax"
   });
 
   return token;
@@ -35,7 +35,6 @@ const restoreUser = (req, res, next) => {
   
   const { token } = req.cookies;
   req.user = null;
-  console.log(token, "this is token", secret, "this is secret")
 
   return jwt.verify(token, secret, null, async (err, jwtPayload) => {
     if (err) {
