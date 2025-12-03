@@ -35,7 +35,7 @@ const restoreUser = (req, res, next) => {
   
   const { token } = req.cookies;
   req.user = null;
-  console.log(token)
+  console.log(token, "this is token", secret, "this is secret")
 
   return jwt.verify(token, secret, null, async (err, jwtPayload) => {
     if (err) {
