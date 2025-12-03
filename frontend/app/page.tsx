@@ -7,6 +7,7 @@ import CategorySection from '../components/CategorySection/CategorySection';
 import NearYouSection from '../components/SalesNearYouSection/SalesNearYou';
 import ItemsNearYouSection from '../components/ItemsNearYouSection/ItemsNearYou';
 import PromotionalSection from '../components/PromotionalSection/PromotionalSection';
+import CarouselSection from '../components/CarouselSection/CarouselSection';
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
 
@@ -122,6 +123,8 @@ export default function HomePage() {
         </div>
 
       </div>
+
+      <CarouselSection />
     </main>
   );
 }

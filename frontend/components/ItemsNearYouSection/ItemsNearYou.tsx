@@ -187,7 +187,7 @@ export default function ItemsNearYouSection() {
 
                 {/* Label Overlay */}
                 <div 
-                  className="absolute bottom-0 right-0 flex items-center gap-1 px-2 py-1"
+                  className="absolute bottom-1 right-1 flex items-center gap-1 px-2 py-1"
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.8)',
                     color: item.label === 'local' ? '#693073' : '#1288e0',
