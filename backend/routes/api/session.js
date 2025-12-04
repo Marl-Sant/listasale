@@ -72,13 +72,13 @@ router.post('/', validateLogin, async (req, res, next) => {
   }
 
   const safeUser = {
-    id: user.id,
-    email: user.email,
-    username: user.username,
-    firstName: user.firstName,
-    stripeCustomerId: user.stripeCustomerId,
-    stripeSubscriptionId: user.stripeSubscriptionId,
-    subscriptionStatus: user.subscriptionStatus,
+    id: account.id,
+    email: account.email,
+    username: account.username,
+    firstName: account.firstName,
+    stripeCustomerId: account.stripeCustomerId,
+    stripeSubscriptionId: account.stripeSubscriptionId,
+    subscriptionStatus: account.subscriptionStatus,
   };
 
   await setTokenCookie(res, safeUser);
