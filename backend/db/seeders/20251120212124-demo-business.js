@@ -15,7 +15,7 @@ module.exports = {
       options,
       [
         {
-          accountId: 1,
+          accountId: 7,
           companyName: 'Sunshine Estate Solutions',
           website: 'https://www.sunshineestatesolutions.com',
           mainPhone: '5615551234',
@@ -31,7 +31,7 @@ module.exports = {
         },
 
         {
-          accountId: 2,
+          accountId: 8,
           companyName: 'Treasure Hunters Estate Services',
           website: 'https://www.treasurehuntersfl.com',
           mainPhone: '3055559001',
@@ -46,21 +46,21 @@ module.exports = {
           updatedAt: new Date()
         },
 
-        {
-          accountId: 3,
-          companyName: 'Atlantic Coast Estate Pros',
-          website: 'https://www.atlanticcoastpros.com',
-          mainPhone: '7545557782',
-          city: 'Fort Lauderdale',
-          state: 'FL',
-          zipCode: '33301',
-          companyLogo: 'https://example.com/logos/atlanticcoast.png',
-          bio: 'Comprehensive estate sale management for Broward County. We handle staging, pricing, buyer logistics, and post-sale cleanouts.',
-          tierId: 3,
-          termsAndConditions: 'v2-2025',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        }
+        // {
+        //   accountId: 3,
+        //   companyName: 'Atlantic Coast Estate Pros',
+        //   website: 'https://www.atlanticcoastpros.com',
+        //   mainPhone: '7545557782',
+        //   city: 'Fort Lauderdale',
+        //   state: 'FL',
+        //   zipCode: '33301',
+        //   companyLogo: 'https://example.com/logos/atlanticcoast.png',
+        //   bio: 'Comprehensive estate sale management for Broward County. We handle staging, pricing, buyer logistics, and post-sale cleanouts.',
+        //   tierId: 3,
+        //   termsAndConditions: 'v2-2025',
+        //   createdAt: new Date(),
+        //   updatedAt: new Date()
+        // }
       ],
       {}
     );
