@@ -78,7 +78,15 @@ export default function Navigation() {
               style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
               <HiUser className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
-              <span>Login/Register</span>
+              <span>Login</span>
+            </Link>
+
+            <Link
+              href="/signup"
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
+            >
+              <span>Register</span>
             </Link>
           </div>
 
