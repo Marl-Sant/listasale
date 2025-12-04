@@ -6,6 +6,7 @@ import { store } from '../store/store';
 import { restoreCSRF, csrfFetch } from '../store/csrf';
 import { sessionActions, restoreUser } from '../store/session';
 import { ModalProvider, Modal } from '../context/Modal';
+import { CsrfBootstrapper } from './CsrfBootstrapper';
 
 export default function Providers({ children }: { children: ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,6 +30,7 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <Provider store={store}>
       <ModalProvider>
+        <CsrfBootstrapper />
         {isLoaded && children}
         <Modal />
       </ModalProvider>
