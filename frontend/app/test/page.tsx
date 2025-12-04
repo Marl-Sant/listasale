@@ -2,7 +2,6 @@
 
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../store/store';
-import type {User} from '../../store/session'
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 import StripeManageSubButton from '@/components/StripeManageSubButton/StripeManageSubButton';
