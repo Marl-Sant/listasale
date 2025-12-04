@@ -9,6 +9,7 @@ import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestB
 export default function TestPage() {
   const user = useSelector((state: RootState) => state.session.user);
   const hasSub = useSelector((user: User) => user.subscriptionStatus === 'active' || user.subscriptionStatus === 'trialing')
+  console.log(hasSub)
 
   return (
     <main className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
