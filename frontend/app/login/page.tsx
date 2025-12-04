@@ -22,7 +22,7 @@ export default function LoginPage() {
   // If already logged in, redirect to '/'
   useEffect(() => {
     if (sessionUser) {
-      router.replace('/');
+      router.replace('/test');
     }
   }, [sessionUser, router]);
 
