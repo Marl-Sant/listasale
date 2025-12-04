@@ -83,6 +83,8 @@ async function stripeWebhookHandler(req, res) {
       // 2) Subscription lifecycle – keep status in sync
       case 'customer.subscription.created':
       case 'customer.subscription.updated':
+      case 'customer.subscription.paused':
+      case 'customer.subscription.resumed':
       case 'customer.subscription.deleted': {
         const subscription = event.data.object;
 
