@@ -46,7 +46,7 @@ module.exports = {
         isActive: true,
       },
       {
-        role: 'PERSONAL',
+        role: 'BUSINESS',
         firstName: 'Michael',
         lastName: 'Buyer',
         username: 'mikeBuyer',
