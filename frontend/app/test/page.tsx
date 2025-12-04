@@ -10,7 +10,7 @@ export default function TestPage() {
   console.log(user)
   
   return (
-    <main>
+    <div>
       <h1>Welcome{user ? <ul>
         
         {Object.values(user).map((attribute, i) => (
@@ -21,6 +21,6 @@ export default function TestPage() {
       : '!'}</h1>
 
       {user ? <><StripeTestButton /> <StripeSubTestButton /></> : <></>}
-    </main>
+    </div>
   );
 }
