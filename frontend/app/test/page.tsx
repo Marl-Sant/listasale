@@ -44,6 +44,7 @@ export default function TestPage() {
 
               <div className="flex flex-wrap gap-3">
                 <StripeTestButton />
+                {`${hasSub}`}
                 {hasSub ? (
                   <p>Congratz you are currently subbed!</p>
                 ) : (
