@@ -8,7 +8,9 @@ const {
   restoreUser,
 } = require('../../utils/auth');
 const { Account } = require('../../db/models');
-const { handleValidationErrors } = require('../../utils/validation');
+const {
+  handleValidationErrors,
+} = require('../../utils/validation');
 
 const router = express.Router();
 
@@ -20,25 +22,26 @@ const validateLogin = [
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a password.'),
-  handleValidationErrors
+  handleValidationErrors,
 ];
 
-router.get(
-  '/',
-  (req, res) => {
-    const { user } = req;
-    if (user) {
-      const safeUser = {
-        id: user.id,
-        email: user.email,
-        username: user.username,
-      };
-      return res.json({
-        user: safeUser
-      });
-    } else return res.json({ user: null });
-  }
-);
+router.get('/', (req, res) => {
+  const { user } = req;
+  if (user) {
+    const safeUser = {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      firstName: user.firstName,
+      stripeCustomerId: user.stripeCustomerId,
+      stripeSubscriptionId: user.stripeSubscriptionId,
+      subscriptionStatus: user.subscriptionStatus,
+    };
+    return res.json({
+      user: safeUser,
+    });
+  } else return res.json({ user: null });
+});
 
 router.post('/', validateLogin, async (req, res, next) => {
   const { credential, password } = req.body;
@@ -69,9 +72,13 @@ router.post('/', validateLogin, async (req, res, next) => {
   }
 
   const safeUser = {
-    id: account.id,
-    email: account.email,
-    username: account.username,
+    id: user.id,
+    email: user.email,
+    username: user.username,
+    firstName: user.firstName,
+    stripeCustomerId: user.stripeCustomerId,
+    stripeSubscriptionId: user.stripeSubscriptionId,
+    subscriptionStatus: user.subscriptionStatus,
   };
 
   await setTokenCookie(res, safeUser);
@@ -81,12 +88,9 @@ router.post('/', validateLogin, async (req, res, next) => {
   });
 });
 
-router.delete(
-  '/',
-  (_req, res) => {
-    res.clearCookie('token');
-    return res.json({ message: 'success' });
-  }
-);
+router.delete('/', (_req, res) => {
+  res.clearCookie('token');
+  return res.json({ message: 'success' });
+});
 
 module.exports = router;

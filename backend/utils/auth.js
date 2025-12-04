@@ -4,59 +4,62 @@ const { Account } = require('../db/models');
 
 const { secret, expiresIn } = jwtConfig;
 
-
 const setTokenCookie = (res, user) => {
-
   const safeUser = {
     id: user.id,
     email: user.email,
     username: user.username,
+    firstName: user.firstName,
+    stripeCustomerId: user.stripeCustomerId,
+    stripeSubscriptionId: user.stripeSubscriptionId,
+    subscriptionStatus: user.subscriptionStatus,
   };
-  const token = jwt.sign(
-    { data: safeUser },
-    secret,
-    { expiresIn: parseInt(expiresIn) } 
-  );
+  const token = jwt.sign({ data: safeUser }, secret, {
+    expiresIn: parseInt(expiresIn),
+  });
 
-  const isProduction = process.env.NODE_ENV === "production";
-
+  const isProduction = process.env.NODE_ENV === 'production';
 
   res.cookie('token', token, {
-    maxAge: expiresIn * 1000, 
+    maxAge: expiresIn * 1000,
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction && "Lax"
+    sameSite: isProduction && 'Lax',
   });
 
   return token;
 };
 
 const restoreUser = (req, res, next) => {
-  
   const { token } = req.cookies;
   req.user = null;
 
-  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
-    if (err) {
+  return jwt.verify(
+    token,
+    secret,
+    null,
+    async (err, jwtPayload) => {
+      if (err) {
+        return next();
+      }
+
+      try {
+        const { id } = jwtPayload.data;
+        req.user = await Account.findByPk(id, {
+          attributes: {
+            include: ['email', 'createdAt', 'updatedAt'],
+          },
+        });
+      } catch (e) {
+        res.clearCookie('token');
+        return next();
+      }
+
+      if (!req.user) res.clearCookie('token');
+
       return next();
     }
-
-    try {
-      const { id } = jwtPayload.data;
-      req.user = await Account.findByPk(id, {
-        attributes: {
-          include: ['email', 'createdAt', 'updatedAt']
-        }
-      });
-    } catch (e) {
-      res.clearCookie('token');
-      return next();
-    }
-
-    if (!req.user) res.clearCookie('token');
-
-    return next();
-  });
+  );
 };
 
 const requireAuth = function (req, _res, next) {
@@ -67,6 +70,6 @@ const requireAuth = function (req, _res, next) {
   err.errors = { message: 'Authentication required' };
   err.status = 401;
   return next(err);
-}
+};
 
 module.exports = { setTokenCookie, restoreUser, requireAuth };
