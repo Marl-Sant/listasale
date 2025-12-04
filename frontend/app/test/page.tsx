@@ -8,7 +8,7 @@ import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestB
 
 export default function TestPage() {
   const user = useSelector((state: RootState) => state.session.user);
-  const hasSub = useSelector((user: User) => user?.subscriptionStatus === 'active' || user?.subscriptionStatus === 'trialing')
+  const hasSub = useSelector((state: RootState) => state.session.user?.subscriptionStatus === 'active' || state.session.user?.subscriptionStatus === 'trialing')
   console.log(user?.subscriptionStatus, hasSub, user?.subscriptionStatus === 'active', typeof user?.subscriptionStatus)
 
   return (
