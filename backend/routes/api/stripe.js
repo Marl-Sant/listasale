@@ -35,7 +35,7 @@ router.post("/create-subscription-session", async (req, res, next) => {
     const { priceId } = req.body;
 
     console.log('➡️ /create-subscription-session body:', req.body);
-    console.log('➡️ req.user:', req.user);
+    console.log('➡️ req.user:', req.user.dataValues.id);
 
     if (!priceId) {
       return res.status(400).json({ error: "Missing priceId" });
