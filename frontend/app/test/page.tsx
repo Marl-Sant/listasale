@@ -5,6 +5,7 @@ import type { RootState } from '../../store/store';
 import type {User} from '../../store/session'
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
+import StripeManageSubButton from '@/components/StripeManageSubButton/StripeManageSubButton';
 
 export default function TestPage() {
   const user = useSelector((state: RootState) => state.session.user);
@@ -45,9 +46,8 @@ export default function TestPage() {
 
               <div className="flex flex-wrap gap-3">
                 <StripeTestButton />
-                {`${user}`}
                 {hasSub ? (
-                  <p>Congratz you are currently subbed!</p>
+                  <StripeManageSubButton />
                 ) : (
                 <StripeSubTestButton />
                 )}
