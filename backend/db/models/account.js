@@ -195,7 +195,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: true,
       },
-      stripCustomerId: {
+      stripeCustomerId: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null,
