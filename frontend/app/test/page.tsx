@@ -7,6 +7,7 @@ import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestB
 
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
+  console.log(user)
   
   return (
     <main>
