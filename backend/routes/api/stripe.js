@@ -2,6 +2,7 @@ const express = require('express');
 const stripe = require('../../config/stripe');
 const router = express.Router();
 const { requireAuth } = require('../../utils/auth');
+const {Account} = require('../../db/models')
 
 router.post(
   '/customer-portal',
