@@ -50,7 +50,7 @@ router.post("/create-subscription-session", async (req, res, next) => {
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       customer_email: req.user.email,
-      client_reference_id: String(accountId),  // <<— KEY LINE
+      client_reference_id: String(req.user.id),  // <<— KEY LINE
       line_items: [
         { price: priceId, quantity: 1 }
       ],
