@@ -11,6 +11,7 @@ export interface User {
   username: string;
   firstName: string;
   lastName: string;
+  subscriptionStatus: string
 }
 
 interface SessionState {

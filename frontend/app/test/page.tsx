@@ -2,11 +2,13 @@
 
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../store/store';
+import type {User} from '../../store/session'
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 
 export default function TestPage() {
   const user = useSelector((state: RootState) => state.session.user);
+  const hasSub = useSelector((user: User) => user.subscriptionStatus === 'active' || user.subscriptionStatus === 'trialing')
 
   return (
     <main className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
@@ -42,7 +44,11 @@ export default function TestPage() {
 
               <div className="flex flex-wrap gap-3">
                 <StripeTestButton />
+                {hasSub ? (
+                  <p>Congratz you are currently subbed!</p>
+                ) : (
                 <StripeSubTestButton />
+                )}
               </div>
             </>
           ) : (

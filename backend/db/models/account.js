@@ -144,7 +144,9 @@ module.exports = (sequelize, DataTypes) => {
             if (!value) return;
             const zipRegex = /^\d{5}(-\d{4})?$/;
             if (!zipRegex.test(value)) {
-              throw new Error('ZIP code must be a valid US ZIP (e.g., 12345 or 12345-6789).');
+              throw new Error(
+                'ZIP code must be a valid US ZIP (e.g., 12345 or 12345-6789).'
+              );
             }
           },
         },
@@ -157,7 +159,9 @@ module.exports = (sequelize, DataTypes) => {
           isUrlOrEmpty(value) {
             if (!value) return;
             if (!Validator.isURL(value)) {
-              throw new Error('Profile picture must be a valid URL.');
+              throw new Error(
+                'Profile picture must be a valid URL.'
+              );
             }
           },
         },
@@ -190,6 +194,21 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
+      },
+      stripCustomerId: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
+      },
+      stripeSubscriptionId: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+      },
+      subscriptionStatus: {
+        type: DataTypes.STRING, 
+        allowNull: true,
+        defaultValue: null
       },
     },
     {

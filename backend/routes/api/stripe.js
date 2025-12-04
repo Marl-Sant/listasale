@@ -48,17 +48,14 @@ router.post("/create-subscription-session", async (req, res, next) => {
 
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
-      mode: "subscription",
+      mode: 'subscription',
       customer_email: req.user.email,
+      client_reference_id: String(accountId),  // <<— KEY LINE
       line_items: [
-        {
-          price: priceId, // e.g. "price_1234" from Stripe Dashboard
-          quantity: 1
-        },
+        { price: priceId, quantity: 1 }
       ],
       success_url: `${process.env.FRONTEND_URL}/billing/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.FRONTEND_URL}/billing/cancelled`,
-      automatic_tax: { enabled: false }
+      cancel_url: `${process.env.FRONTEND_URL}/billing/cancelled`
     });
 
      console.log('✅ Created subscription session:', session.id);
