@@ -58,7 +58,7 @@ router.post("/create-subscription-session", async (req, res, next) => {
       ],
       success_url: `${process.env.FRONTEND_URL}/billing/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.FRONTEND_URL}/billing/cancelled`,
-      automatic_tax: { enabled: true }
+      automatic_tax: { enabled: false }
     });
 
      console.log('✅ Created subscription session:', session.id);
