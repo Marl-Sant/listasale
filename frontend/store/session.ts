@@ -52,6 +52,7 @@ export const login = (user: {
   });
 
   const data = await response.json();
+  console.log(data)
   dispatch(setUser(data.user));
   return response;
 };
