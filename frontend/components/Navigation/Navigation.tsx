@@ -88,6 +88,14 @@ export default function Navigation() {
             >
               <span>Register</span>
             </Link>
+
+            <Link
+              href="/test"
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
+            >
+              <span>Testing Env</span>
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
