@@ -5,7 +5,7 @@ import type { RootState } from '../../store/store';
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 
-export default function HomePage() {
+export default function TestPage() {
   const user = useSelector((state: RootState) => state.session.user);
   console.log(user)
   
