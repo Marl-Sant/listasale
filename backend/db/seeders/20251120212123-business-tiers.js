@@ -17,7 +17,7 @@ module.exports = {
         {
           code: 'TEMPORARY',
           name: 'Temporary',
-          sortOrder: 999, // Always last
+          sortOrder: 999,
           description:
             'Default tier for new business accounts. Limited functionality until an official tier is selected.',
           isTemporary: true,

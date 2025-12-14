@@ -13,12 +13,8 @@ const isProduction = environment === 'production';
 
 const app = express();
 
-
-
-// 1) STRIPE WEBHOOK: NO CSRF, RAW BODY
 app.post('/api/stripe/webhook', stripeWebhookRoute);
 
-// 2) Normal middleware for everything else
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
@@ -28,9 +24,9 @@ app.use(express.json());
 // }
 
 if (!isProduction) {
-  app.use(cors()); // localhost dev
+  app.use(cors()); 
 } else {
-  const allowedOrigin = process.env.FRONTEND_URL; // e.g. https://listasale-frontend.onrender.com
+  const allowedOrigin = process.env.FRONTEND_URL; 
   app.use(
     cors({
       origin: allowedOrigin,
@@ -45,7 +41,7 @@ app.use(
   })
 );
 
-// 3) CSRF APPLIES ONLY TO ALL OTHER /api ROUTES
+
 app.use(
   csurf({
     cookie: {
@@ -56,10 +52,10 @@ app.use(
   })
 );
 
-// 4) Your normal API routes (CSRF-protected)
+
 app.use(routes);
 
-// 5) 404 + error handlers unchanged ...
+
 app.use((_req, _res, next) => {
   const err = new Error(
     "The requested resource couldn't be found."

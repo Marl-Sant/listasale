@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 import { useModal } from '../../context/Modal';
 
 interface OpenModalButtonProps {
-  modalComponent: ReactNode; // component to render inside the modal
-  buttonText: string;        // text for the trigger button
+  modalComponent: ReactNode; 
+  buttonText: string;        
   onButtonClick?: () => void;
   onModalClose?: () => void;
 }

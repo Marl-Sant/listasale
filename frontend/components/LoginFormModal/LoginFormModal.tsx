@@ -29,7 +29,6 @@ export default function LoginFormModal() {
             setErrors(data.errors);
           }
         } catch {
-          // ignore parse errors
         }
       });
   };

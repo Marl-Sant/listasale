@@ -48,7 +48,6 @@ export default function SignupFormModal() {
             setErrors(data.errors);
           }
         } catch {
-          // ignore parse errors
         }
       });
   };

@@ -7,7 +7,6 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class BusinessTier extends Model {
     static associate(models) {
-      // One tier → many business profiles
       BusinessTier.hasMany(models.BusinessProfile, {
         foreignKey: 'tierId',
         as: 'businessProfiles',
@@ -17,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
   BusinessTier.init(
     {
-      // Machine-friendly code: 'TEMPORARY', 'GOLD', 'SILVER', 'BRONZE'
+      
       code: {
         type: DataTypes.STRING(32),
         allowNull: false,
@@ -40,7 +39,6 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
 
-      // Human-facing label
       name: {
         type: DataTypes.STRING(50),
         allowNull: false,
@@ -53,7 +51,6 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
 
-      // Sort order for priority (lower = higher priority; TEMPORARY can be null or large number)
       sortOrder: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -77,7 +74,6 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
 
-      // Convenience flag: true only for the TEMPORARY tier
       isTemporary: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
@@ -91,7 +87,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: true,
 
       defaultScope: {
-        // Common use case: show tiers ordered by sortOrder ASC, then id
         order: [['sortOrder', 'ASC'], ['id', 'ASC']],
       },
 

@@ -20,32 +20,27 @@ module.exports = {
           type: Sequelize.INTEGER
         },
 
-        // MACHINE-FRIENDLY TIER CODE (REQUIRED + UNIQUE)
         code: {
           type: Sequelize.STRING(32),
           allowNull: false,
           unique: true
         },
 
-        // HUMAN-FRIENDLY NAME
         name: {
           type: Sequelize.STRING(50),
           allowNull: false
         },
 
-        // TIER PRIORITY (LOWER = HIGHER PRIORITY)
         sortOrder: {
           type: Sequelize.INTEGER,
           allowNull: true
         },
 
-        // TIER DESCRIPTION
         description: {
           type: Sequelize.TEXT,
           allowNull: true
         },
 
-        // FLAG FOR TEMPORARY TIER (true for TEMPORARY, false otherwise)
         isTemporary: {
           type: Sequelize.BOOLEAN,
           allowNull: false,

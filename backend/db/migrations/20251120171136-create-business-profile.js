@@ -18,7 +18,6 @@ module.exports = {
           type: Sequelize.INTEGER,
         },
 
-        // FK → Accounts.id
         accountId: {
           type: Sequelize.INTEGER,
           allowNull: false,
@@ -70,7 +69,7 @@ module.exports = {
           allowNull: true,
         },
 
-        // FK → BusinessTiers.id
+
         tierId: {
           type: Sequelize.INTEGER,
           allowNull: true,
@@ -79,7 +78,7 @@ module.exports = {
             key: 'id',
           },
           onUpdate: 'CASCADE',
-          onDelete: 'SET NULL', // if tier deleted, keep profile
+          onDelete: 'SET NULL',
         },
 
         termsAndConditions: {

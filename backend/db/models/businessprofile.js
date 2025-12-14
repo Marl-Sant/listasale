@@ -5,35 +5,16 @@ const { Model, Validator } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class BusinessProfile extends Model {
     static associate(models) {
-      // One-to-one with Account
       BusinessProfile.belongsTo(models.Account, {
         foreignKey: 'accountId',
         as: 'account',
       });
 
-      // Business tier (Gold, Silver, Bronze, Temporary)
       BusinessProfile.belongsTo(models.BusinessTier, {
         foreignKey: 'tierId',
         as: 'tier'
       });
 
-      // Service areas (many-to-many)
-      // BusinessProfile.belongsToMany(models.City, {
-      //   through: models.BusinessServiceArea,
-      //   foreignKey: 'businessId',
-      //   otherKey: 'cityId',
-      //   as: 'serviceAreas'
-      // });
-
-      // Exclusive ZIP code ownership
-      // BusinessProfile.hasMany(models.ZipCodeExclusive, {
-      //   foreignKey: 'ownerId',
-      //   as: 'exclusiveZipCodes'
-      // });
-
-      // Example future associations:
-      // BusinessProfile.hasMany(models.EstateSale, { foreignKey: 'businessId' });
-      // BusinessProfile.hasMany(models.LeadAssignment, { foreignKey: 'businessId' });
     }
   }
 
@@ -188,7 +169,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: true,
 
       hooks: {
-        // Normalize input
         beforeValidate(business) {
           if (business.companyName)
             business.companyName = business.companyName.trim();
@@ -202,7 +182,6 @@ module.exports = (sequelize, DataTypes) => {
             business.zipCode = business.zipCode.trim();
         },
 
-        // Auto-assign Temporary tier if tierId missing
         async beforeCreate(business, options) {
           if (!business.tierId) {
             const { BusinessTier } = sequelize.models;

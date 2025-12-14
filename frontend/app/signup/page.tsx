@@ -23,7 +23,7 @@ export default function SignupPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // If already logged in, redirect to '/'
+
   useEffect(() => {
     if (sessionUser) {
       router.replace('/');
@@ -58,7 +58,6 @@ export default function SignupPage() {
           setErrors(data.errors);
         }
       } catch {
-        // ignore JSON parsing errors
       }
     });
   };

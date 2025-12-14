@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import type { RootState, AppDispatch } from '../../store/store';
 import { login } from '../../store/session';
-// import './LoginForm.css'; // optional, see next section
+
 
 export default function LoginPage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,7 +19,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ credential?: string }>({});
 
-  // If already logged in, redirect to '/'
+ 
   useEffect(() => {
     if (sessionUser) {
       router.replace('/test');
@@ -36,7 +36,7 @@ export default function LoginPage() {
           const data = await res.json();
           if (data?.errors) setErrors(data.errors);
         } catch {
-          // swallow parse errors
+ 
         }
       }
     );

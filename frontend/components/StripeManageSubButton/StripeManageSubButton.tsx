@@ -17,7 +17,7 @@ export default function StripeManageSubButton() {
       const data = await res.json();
 
       if (data.url) {
-        window.location.href = data.url; // go to Stripe Billing Portal
+        window.location.href = data.url;
       } else {
         console.error('No portal URL returned:', data);
       }
