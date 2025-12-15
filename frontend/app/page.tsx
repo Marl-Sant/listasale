@@ -46,19 +46,23 @@ export default function HomePage() {
             {/* Buttons Section */}
             <div className="flex gap-4 md:gap-6 lg:gap-7 xl:gap-8 2xl:gap-10 flex-wrap justify-center mt-6 md:mt-8 lg:mt-10 xl:mt-12 2xl:mt-14">
               <button 
-                className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px] 2xl:min-w-[200px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] 2xl:!text-[2.25rem]" 
+                className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] 2xl:w-[280px] 2xl:h-[60px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] 2xl:!text-[2.25rem] flex items-center justify-center !p-0" 
                 style={{ 
                   fontFamily: 'var(--font-rig-sans)',
-                  fontWeight: '700'
+                  fontWeight: '700',
+                  textAlign: 'center',
+                  lineHeight: '1'
                 }}
               >
                 Find Sales
               </button>
               <button 
-                className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px] 2xl:min-w-[200px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] 2xl:!text-[2.25rem]" 
+                className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] 2xl:w-[280px] 2xl:h-[60px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] 2xl:!text-[2.25rem] flex items-center justify-center !p-0" 
                 style={{ 
                   fontFamily: 'var(--font-rig-sans)',
-                  fontWeight: '700'
+                  fontWeight: '700',
+                  textAlign: 'center',
+                  lineHeight: '1'
                 }}
               >
                 Shop Online

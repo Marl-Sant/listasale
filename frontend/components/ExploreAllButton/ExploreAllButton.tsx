@@ -13,10 +13,10 @@ export default function ExploreAllButton({
   onClick,
   className = '' 
 }: ExploreAllButtonProps) {
-  const buttonClasses = `btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px] ${className}`;
+  const buttonClasses = `btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px] !text-sm md:!text-base lg:!text-lg xl:!text-2xl 2xl:!text-3xl ${className}`;
   const buttonStyle = {
     fontFamily: 'var(--font-rig-sans)',
-    fontSize: '18px'
+    fontWeight: '700'
   };
 
   const buttonContent = (
