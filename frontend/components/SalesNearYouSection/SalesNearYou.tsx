@@ -95,8 +95,11 @@ export default function NearYouSection() {
       {/* Near You Title */}
       <div className="flex">
         <span 
-          className="md:text-xl lg:text-2xl xl:text-3xl mb-10 md:mb-12"
-          style={{ fontFamily: 'var(--font-darkmode)', color: '#693073' }}
+          className="md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-10 md:mb-12"
+          style={{ 
+            fontFamily: 'var(--font-darkmode)', 
+            color: '#693073' 
+          }}
         >
           Sales Near You
         </span>
@@ -166,19 +169,22 @@ export default function NearYouSection() {
                     shapeRendering: 'crispEdges'
                   }}
                 >
-                  <HiCamera className="w-4 h-4" />
-                  <span>{item.photoCount}</span>
+                  <HiCamera className="md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
+                  <span className="md:text-base lg:text-[1.167rem] xl:text-[1.3rem] 2xl:text-xl">{item.photoCount}</span>
                 </div>
               </div>
             </div>
             
             {/* Right Section */}
-            <div className="flex-1 flex flex-col p-4 relative">
+            <div className="flex-1 flex flex-col p-4 relative min-w-0">
               
               {/* Title */}
               <span 
-                className="md:text-lg lg:text-xl xl:text-2xl font-bold"
-                style={{ fontFamily: 'var(--font-rig-sans)' }}
+                className="md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] 2xl:text-[2.167rem]"
+                style={{ 
+                  fontFamily: 'var(--font-rig-sans)', 
+                  fontWeight: '700' 
+                }}
               >
                 {item.title}
               </span>
@@ -187,10 +193,11 @@ export default function NearYouSection() {
               <div>
                 {item.owner && (
                   <p 
-                    className="md:text-sm lg:text-base xl:text-lg font-bold mb-1"
+                    className="md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl mb-1"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
-                      color: 'gray'
+                      color: 'gray',
+                      fontWeight: '700'
                     }}
                   >
                    by {item.owner}
@@ -204,11 +211,11 @@ export default function NearYouSection() {
                       <img 
                         src="/images/location.png" 
                         alt="Location" 
-                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-4 xl:h-4 self-center" 
+                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 self-center" 
                         style={{ shapeRendering: 'crispEdges' }}
                       />
                       <p 
-                        className="md:text-sm lg:text-base xl:text-lg m-0 leading-none"
+                        className="md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl m-0 leading-none"
                         style={{ 
                           fontFamily: 'var(--font-rig-sans)',
                           color: '#1288e0'
@@ -224,11 +231,11 @@ export default function NearYouSection() {
                       <img 
                         src="/images/date.png" 
                         alt="Calendar" 
-                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-4 xl:h-4 self-center" 
+                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 self-center" 
                         style={{ shapeRendering: 'crispEdges' }}
                       />
                       <p 
-                        className="md:text-sm lg:text-base xl:text-lg m-0 leading-none"
+                        className="md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl m-0 leading-none"
                         style={{ 
                           fontFamily: 'var(--font-rig-sans)',
                           color: '#692073'
@@ -243,20 +250,23 @@ export default function NearYouSection() {
 
               {/* Sub Images */}
               {item.subImages && item.subImages.length > 0 && (
-                <div className="flex justify-between gap-1 mt-auto overflow-x-auto">
-                  {item.subImages.slice(0, 5).map((subImage, index) => {
-                    const getDisplayClasses = () => {
-                      if (index < 3) return '';
-                      if (index === 3) return 'hidden lg:block';
-                      if (index === 4) return 'hidden xl:block';
-                      return 'hidden';
-                    };
-                    
+                <div 
+                  className="flex mt-auto overflow-x-scroll overflow-y-hidden md:gap-2 lg:gap-3 xl:gap-4 2xl:gap-5 w-full"
+                  style={{ 
+                    scrollBehavior: 'smooth',
+                    WebkitOverflowScrolling: 'touch',
+                    msOverflowStyle: 'scrollbar'
+                  }}
+                >
+                  {item.subImages.map((subImage, index) => {
                     return (
                       <div 
                         key={index} 
-                        className={`relative overflow-hidden w-20 md:w-26 lg:w-32 xl:w-40 ${getDisplayClasses()}`}
-                        style={{ aspectRatio: '9.5/8.5' }}
+                        className="relative overflow-hidden flex-shrink-0 flex-[1_1_0]"
+                        style={{ 
+                          aspectRatio: '9.5 / 8.5',
+                          minWidth: '20%'
+                        }}
                       >
                         <img 
                           src={subImage} 
