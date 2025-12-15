@@ -26,19 +26,22 @@ export default function HomePage() {
         />
         
         <div 
-          className="absolute md:top-[10%] lg:top-[14%] xl:top-[17%] left-0 right-0 text-center text-white text-3xl md:text-6xl lg:text-7xl xl:text-8xl font-bold w-full max-w-full px-4" 
+          className="absolute md:top-[10%] lg:top-[14%] xl:top-[17%] left-0 right-0 text-center text-white w-full max-w-full px-4" 
           style={{ fontFamily: 'var(--font-darkmode)' }}
         >
-          <div className="flex flex-col">
-            <span className="whitespace-nowrap">Let's find your next</span>
-            <span className="mt-3 md:mt-6 lg:mt-8">hidden treasure</span>
-          </div> </div>
-
-        <div 
-          className="absolute md:top-[44%] lg:top-[45%] xl:top-[46%] left-0 right-0 text-center text-white text-base md:text-2xl lg:text-3xl xl:text-4xl font-bold w-full max-w-full px-4"
-          style={{ fontFamily: 'var(--font-rig-sans)' }}
-        >
-          <span>A smarter way to search for<br /> estate sales and vintage goods</span>
+          <div className="flex flex-col items-center">
+            <div className="text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] font-bold">
+              <span className="whitespace-nowrap">Let's find your next</span>
+              <span className="mt-3 md:mt-6 lg:mt-8 block">hidden treasure</span>
+            </div>
+            
+            <div 
+              className="text-base md:text-2xl lg:text-3xl xl:text-[2.333rem] font-bold mt-4 md:mt-6 lg:mt-8 w-[550px]"
+              style={{ fontFamily: 'var(--font-rig-sans)' }}
+            >
+              <span>A smarter way to search for estate sales and vintage goods</span>
+            </div>
+          </div>
         </div>
 
         <div className="absolute md:top-[62%] lg:top-[60%] xl:top-[58%] left-0 right-0 flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center w-full max-w-full px-4">

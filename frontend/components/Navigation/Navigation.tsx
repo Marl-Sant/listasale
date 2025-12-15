@@ -19,25 +19,25 @@ export default function Navigation() {
       {/* Purple Banner - Now Sticky */}
       <div className="sticky top-0 bg-[#7a2b87] text-white py-2 px-4 xl:px-0 z-50">
         <div 
-          className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:pl-2 flex items-center justify-between text-sm" 
+          className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:pl-2 flex items-center justify-between text-sm xl:text-2xl" 
           style={{ fontFamily: 'var(--font-rig-sans)', textDecoration: 'none' }}
         >
           <div className="flex items-center">
             <Link 
               href="/subscribe" 
-              className="underline hover:no-underline" 
+              className="underline hover:no-underline mr-1" 
               style={{ textDecoration: 'underline', color: 'white' }}
             >
               Subscribe
             </Link>
-            {' '}to receive notifications of upcoming sales in your area.
+            <span>to receive notifications of upcoming sales in your area.</span>
           </div>
           
           {/* Register/Login moved to purple bar */}
           <div className="hidden md:flex items-center">
             <Link
               href="/login"
-              className="flex items-center space-x-2 text-white font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              className="flex items-center space-x-2 text-white font-semibold hover:opacity-80 transition-opacity text-sm xl:text-2xl"
               style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
               <HiUser className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
@@ -49,8 +49,8 @@ export default function Navigation() {
 
       {/* Main Nav - Positioned below sticky purple bar */}
       <nav className="sticky top-[40px] bg-white w-full shadow-md z-40">
-        <div className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:px-0 flex items-center justify-between h-24">
-          
+        <div className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:px-0 flex items-center justify-between h-28 md:h-22 lg:h-26 xl:h-30">
+                
           {/* Logo and Main Links Group */}
           <div className="flex items-center">
             <div className="flex items-center">
@@ -68,7 +68,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base ${index > 0 ? 'md:-ml-1 lg:ml-0' : ''}`}
+                  className={`font-medium hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base xl:text-[1.667rem] ${index > 0 ? 'md:-ml-1 lg:ml-0' : ''}`}
                   style={{ fontFamily: 'var(--font-darkmode)', color: '#693073', textDecoration: 'none' }}
                 >
                   {link.label}
@@ -81,16 +81,16 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
             <Link
               href="/create-listing"
-              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base xl:text-[1.667rem]"
               style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
               <HiHome className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
               <span>Create a Listing</span>
             </Link>
             
-            <Link
+            {/* <Link
               href="/login"
-              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base xl:text-[1.667rem]"
               style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
               <HiUser className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
@@ -99,7 +99,7 @@ export default function Navigation() {
 
             <Link
               href="/signup"
-              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base xl:text-[1.667rem]"
               style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
               <span>Register</span>
@@ -107,11 +107,11 @@ export default function Navigation() {
 
             <Link
               href="/test"
-              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base xl:text-[1.667rem]"
               style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
             >
               <span>Testing Env</span>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Hamburger */}
