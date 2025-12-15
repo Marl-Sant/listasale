@@ -90,12 +90,12 @@ export default function NearYouSection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-5 md:px-9 lg:px-9 py-8">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-9 lg:px-9 md:mb-10 xl:mb-20">
   
       {/* Near You Title */}
       <div className="flex">
         <span 
-          className="md:text-xl lg:text-2xl xl:text-3xl mb-8"
+          className="md:text-xl lg:text-2xl xl:text-3xl mb-10 md:mb-12"
           style={{ fontFamily: 'var(--font-darkmode)', color: '#693073' }}
         >
           Sales Near You
@@ -272,20 +272,6 @@ export default function NearYouSection() {
           </Link>
         );
       })}
-      </div>
-
-      {/* Explore All Button */}
-      <div className="flex justify-center mt-12">
-        <button 
-          type="button" 
-          className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
-          style={{ 
-            fontFamily: 'var(--font-rig-sans)' ,
-            fontSize: '18px'
-          }}
-        >
-          Explore All
-        </button>
       </div>
 
     </section>

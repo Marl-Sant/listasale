@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { HiHome, HiUser } from 'react-icons/hi';
+import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,25 +16,39 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Purple Banner */}
-      <div className="relative bg-[#7a2b87] text-white py-2 px-4 xl:px-0 z-50">
+      {/* Purple Banner - Now Sticky */}
+      <div className="sticky top-0 bg-[#7a2b87] text-white py-2 px-4 xl:px-0 z-50">
         <div 
-          className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:pl-2 text-sm" 
+          className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:pl-2 flex items-center justify-between text-sm" 
           style={{ fontFamily: 'var(--font-rig-sans)', textDecoration: 'none' }}
         >
-          <Link 
-            href="/subscribe" 
-            className="underline hover:no-underline" 
-            style={{ textDecoration: 'underline', color: 'white' }}
-          >
-            Subscribe
-          </Link>
-          {' '}to receive notifications of upcoming sales in your area.
+          <div className="flex items-center">
+            <Link 
+              href="/subscribe" 
+              className="underline hover:no-underline" 
+              style={{ textDecoration: 'underline', color: 'white' }}
+            >
+              Subscribe
+            </Link>
+            {' '}to receive notifications of upcoming sales in your area.
+          </div>
+          
+          {/* Register/Login moved to purple bar */}
+          <div className="hidden md:flex items-center">
+            <Link
+              href="/login"
+              className="flex items-center space-x-2 text-white font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"
+              style={{ fontFamily: 'var(--font-darkmode)', textDecoration: 'none' }}
+            >
+              <HiUser className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
+              <span>Login/Register</span>
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* Main Nav */}
-      <nav className="sticky top-0 bg-white w-full shadow-md z-40">
+      {/* Main Nav - Positioned below sticky purple bar */}
+      <nav className="sticky top-[40px] bg-white w-full shadow-md z-40">
         <div className="max-w-7xl xl:max-w-none mx-auto px-4 md:px-6 lg:px-8 xl:px-0 flex items-center justify-between h-24">
           
           {/* Logo and Main Links Group */}
@@ -43,7 +58,7 @@ export default function Navigation() {
                 <img 
                   src="/images/ListLogo.png" 
                   alt="List A Sale" 
-                  className="h-20 md:h-20" 
+                  className="h-24 md:h-28 lg:h-32" 
                   style={{ textDecoration: 'none' }}
                 />
               </Link>
@@ -62,7 +77,7 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Right Links */}
+          {/* Right Links - Replaced Login/Register with Search Bar */}
           <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
             <Link
               href="/create-listing"
@@ -72,6 +87,7 @@ export default function Navigation() {
               <HiHome className="w-4 h-4 md:w-4 lg:w-5 lg:h-5" />
               <span>Create a Listing</span>
             </Link>
+            
             <Link
               href="/login"
               className="flex items-center space-x-2 text-[#1288e0] font-semibold hover:opacity-80 transition-opacity text-xs md:text-sm lg:text-base"

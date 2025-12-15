@@ -2,7 +2,7 @@
 
 export default function PromotionalSection() {
   return (
-    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9 md:py-12">
+    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9 xl:mb-25 xl:mt-20">
       <div className="md:flex md:flex-row md:gap-6">
         {/* Left Side */}
         <div className="flex-1 md:flex md:flex-row bg-[#693073] md:rounded-l-3xl overflow-hidden promotional-card">

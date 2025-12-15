@@ -21,12 +21,12 @@ export default function CategorySection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-12">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-9 lg:px-9 pt-12 md:mb-10 xl:mb-20">
       
       {/* Shop By Category Title */}
       <div className="flex justify-center">
         <span 
-            className="md:text-xl lg:text-2xl xl:text-3xl font-bold mb-8"
+            className="md:text-xl lg:text-2xl xl:text-3xl font-bold mb-10 md:mb-12"
             style={{ fontFamily: 'var(--font-darkmode)', textAlign: 'center', color: '#693073' }}
             >
             Shop By Category

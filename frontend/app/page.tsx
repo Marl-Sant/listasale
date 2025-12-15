@@ -10,6 +10,8 @@ import PromotionalSection from '../components/PromotionalSection/PromotionalSect
 import CarouselSection from '../components/CarouselSection/CarouselSection';
 
 
+import ExploreAllButton from '../components/ExploreAllButton/ExploreAllButton';
+
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
 
@@ -79,17 +81,20 @@ export default function HomePage() {
 
       <CategorySection />
       <NearYouSection />
+      <ExploreAllButton href="/sales" />
+
       <ItemsNearYouSection />
+      <ExploreAllButton href="/sales" />
+      
       <PromotionalSection />
 
       {/* Hero Image 2 */}
-      <div className="relative w-full aspect-video overflow-hidden flex flex-col items-center justify-center md:-mt-20 lg:-mt-30 xl:-mt-40">
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden flex flex-col items-center justify-center xl:mb-20">
         <img 
             src="/images/list-a-sale-estate-yard-garage-online-sell.jpg" 
             alt="List A Sale" 
             className="h-full w-full object-cover absolute inset-0"
             style={{ 
-              clipPath: 'inset(20% 0 19% 0)',
               filter: 'brightness(0.8)'
             }}
           />
@@ -110,7 +115,8 @@ export default function HomePage() {
         >
           <span>List A Sale makes it easy for anyone to list sales or items and reach buyers
                 <br />who are actively searching. Post your listings and get discovered by people 
-                <br />looking for great finds in your area.</span>
+                <br />looking for great finds in your area.
+          </span>
         </div>
 
         <div className="absolute md:top-[65%] lg:top-[65%] xl:top-[65%] left-0 right-0 flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center w-full max-w-full px-4">
@@ -122,7 +128,6 @@ export default function HomePage() {
             Start Listing
           </button>
         </div>
-
       </div>
 
       <CarouselSection />

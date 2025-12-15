@@ -63,8 +63,8 @@ export default function CarouselSection() {
   const currentSlide = slides[currentIndex];
 
   return (
-    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9 md:-mt-10 lg:-mt-15 xl:-mt-25 md:mb-10 xl:mb-20">
-      <div className="relative w-full aspect-[18/9]">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-9 lg:px-9 pt-10 pb-10 xl:mb-20">
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
         
         {/* Background Image */}
         <img 
