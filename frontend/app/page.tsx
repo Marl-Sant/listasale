@@ -22,9 +22,10 @@ export default function HomePage() {
         <img 
           src="/images/firstHomeImage.jpg" 
           alt="List A Sale" 
-          className="h-full w-full object-cover absolute"
+          className=" h-full w-full object-cover absolute"
         />
         
+        {/* Hero Text Section */}
         <div 
           className="absolute md:top-[10%] lg:top-[14%] xl:top-[17%] left-0 right-0 text-center text-white w-full max-w-full px-4" 
           style={{ fontFamily: 'var(--font-darkmode)' }}
@@ -36,50 +37,66 @@ export default function HomePage() {
             </div>
             
             <div 
-              className="text-base md:text-2xl lg:text-3xl xl:text-[2.333rem] font-bold mt-4 md:mt-6 lg:mt-8 w-[550px]"
+              className="text-base md:text-2xl lg:text-3xl xl:text-[2.333rem] font-bold mt-6 w-[550px]"
               style={{ fontFamily: 'var(--font-rig-sans)' }}
             >
               <span>A smarter way to search for estate sales and vintage goods</span>
             </div>
+
+            {/* Buttons Section */}
+            <div className="flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center mt-6">
+              <button 
+                className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem]" 
+                style={{ 
+                  fontFamily: 'var(--font-rig-sans)',
+                  fontWeight: '700'
+                }}
+              >
+                Find Sales
+              </button>
+              <button 
+                className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem]" 
+                style={{ 
+                  fontFamily: 'var(--font-rig-sans)',
+                  fontWeight: '700'
+                }}
+              >
+                Shop Online
+              </button>
+            </div>
+
+            {/* Search Bar Section */}
+            <div className="border-2 border-red-500 mt-6 w-2/3">
+              <div className="input-group h-15">
+                <input 
+                  type="search" 
+                  className="form-control rounded-none placeholder-gray-400 text-sm md:text-base lg:text-lg xl:text-[1.5rem]" 
+                  placeholder="Find what you love: item, city, seller..." 
+                  style={{ 
+                    borderRadius: '0', 
+                    fontFamily: 'var(--font-rig-sans)', 
+                    fontSize: '1.5rem'
+                  }}
+                />
+                <button 
+                  className="btn btn-primary rounded-none" 
+                  type="button"
+                  style={{ 
+                    backgroundColor: 'white',
+                    color: '#1288e0', 
+                    borderRadius: '0', 
+                    border: 'none' 
+                  }}
+                >
+                  <HiMagnifyingGlass 
+                    className="w-8 h-8 text-[#1288e0]" 
+                    style={{ strokeWidth: '2' }}
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="absolute md:top-[62%] lg:top-[60%] xl:top-[58%] left-0 right-0 flex gap-4 md:gap-6 lg:gap-7 xl:gap-15 flex-wrap justify-center w-full max-w-full px-4">
-          <button 
-            className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px]" 
-            style={{ 
-              fontFamily: 'var(--font-rig-sans)'}}
-          >
-            Find Sales
-          </button>
-          <button 
-            className="btn btn-primary btn-lg md:min-w-[130px] lg:min-w-[150px] xl:min-w-[180px]" 
-            style={{ fontFamily: 'var(--font-rig-sans)' }}
-          >
-            Shop Online
-          </button>
-        </div>
-
-        {/* Search Bar */}
-        <div className="input-group absolute h-12 md:top-[34%] lg:top-[26%] xl:top-[22%] max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl mx-auto">
-          <input 
-            type="search" 
-            className="form-control rounded-none placeholder-gray-400" 
-            placeholder="Find what you love: item, city, seller..." 
-            style={{ borderRadius: '0', fontFamily: 'var(--font-rig-sans)' }}
-          />
-          <button 
-            className="btn btn-primary rounded-none" 
-            type="button"
-            style={{ backgroundColor: 'white', color: '#1288e0', borderRadius: '0', border: 'none' }}
-          >
-            <HiMagnifyingGlass 
-              className="w-5 h-5 text-[#1288e0]" 
-              style={{ strokeWidth: '2' }}
-            />
-          </button>
-        </div>
-
       </div>
 
       <CategorySection />
