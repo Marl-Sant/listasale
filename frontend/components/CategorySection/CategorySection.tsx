@@ -26,8 +26,12 @@ export default function CategorySection() {
       {/* Shop By Category Title */}
       <div className="flex justify-center">
         <span 
-            className="md:text-xl lg:text-2xl xl:text-3xl font-bold mb-10 md:mb-12"
-            style={{ fontFamily: 'var(--font-darkmode)', textAlign: 'center', color: '#693073' }}
+            className="md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-10 md:mb-12"
+            style={{ 
+              fontFamily: 'var(--font-darkmode)', 
+              textAlign: 'center', 
+              color: '#693073' 
+            }}
             >
             Shop By Category
         </span>
