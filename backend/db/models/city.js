@@ -5,8 +5,17 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class City extends Model {
     static associate(models) {
-      City.hasMany(models.ZipCode, { foreignKey: 'cityId', as: 'zipCodes' });
-      City.hasMany(models.BusinessServiceArea, { foreignKey: 'cityId', as: 'serviceAreas' });
+      City.belongsToMany(models.ZipCode, {
+        through: models.ZipCodeCity,
+        foreignKey: 'cityId',
+        otherKey: 'zipCode',
+        as: 'zipCodes',
+      });
+
+      City.hasMany(models.ZipCodeCity, {
+        foreignKey: 'cityId',
+        as: 'zipCityLinks',
+      });
     }
   }
 
@@ -17,25 +26,44 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notEmpty: { msg: 'City name is required.' },
-          len: { args: [1, 120], msg: 'City name must be between 1 and 120 characters.' },
+          len: {
+            args: [1, 120],
+            msg: 'City name must be 1-120 characters.',
+          },
         },
       },
+
       state: {
         type: DataTypes.STRING(2),
         allowNull: true,
-        validate: { len: { args: [2, 2], msg: 'State must be a 2-letter code.' } },
+        validate: {
+          len: {
+            args: [2, 2],
+            msg: 'State must be 2 characters.',
+          },
+        },
       },
+
       country: {
         type: DataTypes.STRING(2),
-        allowNull: true,
+        allowNull: false,
         defaultValue: 'US',
-        validate: { len: { args: [2, 2], msg: 'Country must be a 2-letter code.' } },
+        validate: {
+          len: {
+            args: [2, 2],
+            msg: 'Country must be 2 characters.',
+          },
+        },
       },
+
       geonamesId: {
         type: DataTypes.INTEGER,
         allowNull: true,
-        validate: { isInt: { msg: 'geonamesId must be an integer.' } },
+        validate: {
+          isInt: { msg: 'geonamesId must be an integer.' },
+        },
       },
+
       latitude: { type: DataTypes.FLOAT, allowNull: true },
       longitude: { type: DataTypes.FLOAT, allowNull: true },
     },
@@ -47,8 +75,10 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeValidate(city) {
           if (city.name) city.name = city.name.trim();
-          if (city.state) city.state = city.state.trim().toUpperCase();
-          if (city.country) city.country = city.country.trim().toUpperCase();
+          if (city.state)
+            city.state = city.state.trim().toUpperCase();
+          if (city.country)
+            city.country = city.country.trim().toUpperCase();
         },
       },
     }

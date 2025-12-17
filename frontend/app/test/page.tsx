@@ -5,6 +5,9 @@ import type { RootState } from '../../store/store';
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 import StripeManageSubButton from '@/components/StripeManageSubButton/StripeManageSubButton';
+import LocationAutocompleteTester from '@/components/LocationAutocompleteTester/LocationAutocompleteTester';
+
+
 
 export default function TestPage() {
   const user = useSelector((state: RootState) => state.session.user);
@@ -42,6 +45,10 @@ export default function TestPage() {
                   </li>
                 ))}
               </ul>
+
+                <div className="mb-4">
+                <LocationAutocompleteTester />
+                </div>
 
               <div className="flex flex-wrap gap-3">
                 <StripeTestButton />

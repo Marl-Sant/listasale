@@ -28,6 +28,7 @@ module.exports = {
 
     await queryInterface.addIndex('Cities', ['name', 'state', 'country'], {
       name: 'idx_cities_name_state_country',
+      unique: true,
       ...options
     });
   },

@@ -11,6 +11,7 @@ import CarouselSection from '../components/CarouselSection/CarouselSection';
 import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 
+
 export default function HomePage() {
   const user = useSelector((state: RootState) => state.session.user);
 

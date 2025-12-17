@@ -7,16 +7,25 @@ if (process.env.NODE_ENV === 'production') options.schema = process.env.SCHEMA;
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable(
-      'ZipCodes',
+      'ZipCodeCities',
       {
         zipCode: {
+          type: Sequelize.STRING(10),
           allowNull: false,
           primaryKey: true,
-          type: Sequelize.STRING(10),
+          references: { model: 'ZipCodes', key: 'zipCode' },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE',
         },
 
-        latitude: { type: Sequelize.FLOAT, allowNull: true },
-        longitude: { type: Sequelize.FLOAT, allowNull: true },
+        cityId: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          primaryKey: true,
+          references: { model: 'Cities', key: 'id' },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE',
+        },
 
         createdAt: {
           allowNull: false,
@@ -34,14 +43,20 @@ module.exports = {
     );
 
     await queryInterface.addIndex(
-      { tableName: 'ZipCodes', schema: options.schema },
+      { tableName: 'ZipCodeCities', schema: options.schema },
       ['zipCode'],
-      { name: 'zip_codes_zip_code_idx' }
+      { name: 'idx_zipcodecities_zipCode' }
+    );
+
+    await queryInterface.addIndex(
+      { tableName: 'ZipCodeCities', schema: options.schema },
+      ['cityId'],
+      { name: 'idx_zipcodecities_cityId' }
     );
   },
 
   async down(queryInterface) {
-    options.tableName = 'ZipCodes';
+    options.tableName = 'ZipCodeCities';
     await queryInterface.dropTable(options);
   },
 };
