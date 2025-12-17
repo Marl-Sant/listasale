@@ -196,9 +196,14 @@ export default function ItemsNearYouSection() {
                   <img 
                     src={item.label === 'local' ? '/images/pickUp.png' : '/images/delivery.png'} 
                     alt={item.label === 'local' ? 'Pick Up' : 'Delivery'}
-                    className="w-4 h-4"
+                    className="w-5 h-5"
                   />
-                  <span style={{ fontFamily: 'var(--font-rig-sans)', fontWeight: '700' }}>
+                  <span 
+                    className="md:text-base lg:text-[1.167rem] xl:text-[1.333rem] 2xl:text-3xl"
+                  style={{ 
+                    fontFamily: 'var(--font-rig-sans)', 
+                    fontWeight: '700' 
+                    }}>
                     {item.label === 'local' ? 'Local Pick Up Only' : 'Shipping Available'}
                   </span>
                 </div>
@@ -208,24 +213,20 @@ export default function ItemsNearYouSection() {
               <div className="flex flex-col flex-1 md:px-2">
                 
                 {/* Title */}
-                <h3 
-                  className="md:mb-0"
+                <span 
+                  className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl 2xl:text-3xl font-bold"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
-                    fontWeight: '700',
-                    fontSize: '18pt'
                   }}
                 >
                   {item.title}
-                </h3>
+                </span>
 
                 {/* Location */}
                 <p 
-                  className="md:mb-2"
+                  className="md:mb-2 md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl 2xl:text-3xl font-regular"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
-                    fontWeight: '400',
-                    fontSize: '18pt',
                     color: 'gray'
                   }}
                 >
@@ -234,20 +235,16 @@ export default function ItemsNearYouSection() {
 
                 {/* Price and Time Left */}
                 <div className="flex items-baseline justify-between md:pt-4 mt-auto">
-                  <span 
+                  <span className='md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] 2xl:text-3xl font-bold'
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
-                      fontWeight: '700',
-                      fontSize: '24pt'
                     }}
                   >
                     {item.price}
                   </span>
-                  <span 
+                  <span className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl 2xl:text-3xl font-regular"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
-                      fontWeight: '400',
-                      fontSize: '16pt'
                     }}
                   >
                     {item.timeLeft}
