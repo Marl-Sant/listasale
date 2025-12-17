@@ -27,26 +27,26 @@ export default function HomePage() {
         
         {/* Hero Text Section */}
         <div 
-          className="absolute md:top-[5%] lg:top-[10%] xl:top-[10%] 2xl:top-[10%] left-0 right-0 text-center text-white w-full max-w-full px-4" 
+          className="absolute md:top-[5%] lg:top-[10%] xl:top-[10%] left-0 right-0 text-center text-white w-full max-w-full px-4" 
           style={{ fontFamily: 'var(--font-darkmode)' }}
         >
           <div className="flex flex-col items-center">
-            <div className="text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] 2xl:text-[7.5rem] font-bold">
+            <div className="text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] font-bold">
               <span className="whitespace-nowrap">Let's find your next</span>
-              <span className="mt-3 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-12 block">hidden treasure</span>
+              <span className="mt-3 md:mt-6 lg:mt-8 xl:mt-10 block">hidden treasure</span>
             </div>
             
             <div 
-              className="text-base md:text-2xl lg:text-3xl xl:text-[2.333rem] 2xl:text-[2.667rem] font-bold mt-6 md:w-[400px] lg:w-[550px] xl:w-[700px] 2xl:w-[800px]"
+              className="text-base md:text-2xl lg:text-3xl xl:text-[2.333rem] font-bold mt-6 md:w-[400px] lg:w-[550px] xl:w-[700px]"
               style={{ fontFamily: 'var(--font-rig-sans)' }}
             >
               <span>A smarter way to search for estate sales and vintage goods</span>
             </div>
 
             {/* Buttons Section */}
-            <div className="flex gap-4 md:gap-6 lg:gap-7 xl:gap-8 2xl:gap-10 flex-wrap justify-center mt-6 md:mt-8 lg:mt-10 xl:mt-12 2xl:mt-14">
+            <div className="flex gap-4 md:gap-6 lg:gap-7 xl:gap-8 flex-wrap justify-center mt-6 md:mt-8 lg:mt-10 xl:mt-12">
               <button 
-                className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] 2xl:w-[280px] 2xl:h-[60px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] 2xl:!text-[2.25rem] flex items-center justify-center !p-0" 
+                className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] flex items-center justify-center !p-0" 
                 style={{ 
                   fontFamily: 'var(--font-rig-sans)',
                   fontWeight: '700',
@@ -57,7 +57,7 @@ export default function HomePage() {
                 Find Sales
               </button>
               <button 
-                className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] 2xl:w-[280px] 2xl:h-[60px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] 2xl:!text-[2.25rem] flex items-center justify-center !p-0" 
+                className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] flex items-center justify-center !p-0" 
                 style={{ 
                   fontFamily: 'var(--font-rig-sans)',
                   fontWeight: '700',
@@ -70,11 +70,11 @@ export default function HomePage() {
             </div>
 
             {/* Search Bar Section */}
-            <div className="mt-6 md:mt-8 lg:mt-10 xl:mt-12 2xl:mt-14 w-full md:w-4/5 lg:w-3/4 xl:w-2/3 2xl:w-3/5">
-              <div className="input-group md:h-12 lg:h-14 xl:h-16 2xl:h-18">
+            <div className="mt-6 md:mt-8 lg:mt-10 xl:mt-12 w-full md:w-4/5 lg:w-3/4 xl:w-2/3">
+              <div className="input-group md:h-12 lg:h-14 xl:h-16">
                 <input 
                   type="search" 
-                  className="form-control rounded-none placeholder-gray-400 !text-sm md:!text-base lg:!text-lg xl:!text-[1.5rem] 2xl:!text-[1.75rem]" 
+                  className="form-control rounded-none placeholder-gray-400 !text-sm md:!text-base lg:!text-lg xl:!text-[1.5rem]" 
                   placeholder="Find what you love: item, city, seller..." 
                   style={{ 
                     borderRadius: '0', 
@@ -92,7 +92,7 @@ export default function HomePage() {
                   }}
                 >
                   <HiMagnifyingGlass 
-                    className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 text-[#1288e0]" 
+                    className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 text-[#1288e0]" 
                     style={{ strokeWidth: '2' }}
                   />
                 </button>

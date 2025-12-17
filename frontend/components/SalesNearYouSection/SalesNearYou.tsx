@@ -95,7 +95,7 @@ export default function NearYouSection() {
       {/* Near You Title */}
       <div className="flex">
         <span 
-          className="md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-10 md:mb-12"
+          className="md:text-2xl lg:text-3xl xl:text-4xl mb-10 md:mb-12"
           style={{ 
             fontFamily: 'var(--font-darkmode)', 
             color: '#693073' 
@@ -169,8 +169,8 @@ export default function NearYouSection() {
                     shapeRendering: 'crispEdges'
                   }}
                 >
-                  <HiCamera className="md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
-                  <span className="md:text-base lg:text-[1.167rem] xl:text-[1.3rem] 2xl:text-xl">{item.photoCount}</span>
+                  <HiCamera className="md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+                  <span className="md:text-base lg:text-[1.167rem] xl:text-[1.3rem]">{item.photoCount}</span>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function NearYouSection() {
               
               {/* Title */}
               <span 
-                className="md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] 2xl:text-[2.167rem]"
+                className="md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem]"
                 style={{ 
                   fontFamily: 'var(--font-rig-sans)', 
                   fontWeight: '700' 
@@ -193,7 +193,7 @@ export default function NearYouSection() {
               <div>
                 {item.owner && (
                   <p 
-                    className="md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl mb-1"
+                    className="md:text-base lg:text-xl xl:text-2xl mb-1"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
                       color: 'gray',
@@ -211,11 +211,11 @@ export default function NearYouSection() {
                       <img 
                         src="/images/location.png" 
                         alt="Location" 
-                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 self-center" 
+                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 self-center" 
                         style={{ shapeRendering: 'crispEdges' }}
                       />
                       <p 
-                        className="md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl m-0 leading-none"
+                        className="md:text-base lg:text-xl xl:text-2xl m-0 leading-none"
                         style={{ 
                           fontFamily: 'var(--font-rig-sans)',
                           color: '#1288e0'
@@ -231,11 +231,11 @@ export default function NearYouSection() {
                       <img 
                         src="/images/date.png" 
                         alt="Calendar" 
-                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 self-center" 
+                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 self-center" 
                         style={{ shapeRendering: 'crispEdges' }}
                       />
                       <p 
-                        className="md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl m-0 leading-none"
+                        className="md:text-base lg:text-xl xl:text-2xl m-0 leading-none"
                         style={{ 
                           fontFamily: 'var(--font-rig-sans)',
                           color: '#692073'
@@ -251,7 +251,7 @@ export default function NearYouSection() {
               {/* Sub Images */}
               {item.subImages && item.subImages.length > 0 && (
                 <div 
-                  className="flex mt-auto overflow-x-scroll overflow-y-hidden md:gap-2 lg:gap-3 xl:gap-4 2xl:gap-5 w-full"
+                  className="flex mt-auto overflow-x-scroll overflow-y-hidden md:gap-2 lg:gap-3 xl:gap-4 w-full"
                   style={{ 
                     scrollBehavior: 'smooth',
                     WebkitOverflowScrolling: 'touch',

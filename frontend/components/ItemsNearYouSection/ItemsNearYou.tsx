@@ -199,7 +199,7 @@ export default function ItemsNearYouSection() {
                     className="w-5 h-5"
                   />
                   <span 
-                    className="md:text-base lg:text-[1.167rem] xl:text-[1.333rem] 2xl:text-3xl"
+                    className="md:text-base lg:text-[1.167rem] xl:text-[1.333rem]"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)', 
                     fontWeight: '700' 
@@ -214,7 +214,7 @@ export default function ItemsNearYouSection() {
                 
                 {/* Title */}
                 <span 
-                  className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl 2xl:text-3xl font-bold"
+                  className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl font-bold"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
                   }}
@@ -224,7 +224,7 @@ export default function ItemsNearYouSection() {
 
                 {/* Location */}
                 <p 
-                  className="md:mb-2 md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl 2xl:text-3xl font-regular"
+                  className="md:mb-2 md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl font-regular"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
                     color: 'gray'
@@ -235,14 +235,14 @@ export default function ItemsNearYouSection() {
 
                 {/* Price and Time Left */}
                 <div className="flex items-baseline justify-between md:pt-4 mt-auto">
-                  <span className='md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] 2xl:text-3xl font-bold'
+                  <span className='md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] font-bold'
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
                     }}
                   >
                     {item.price}
                   </span>
-                  <span className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl 2xl:text-3xl font-regular"
+                  <span className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl font-regular"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
                     }}

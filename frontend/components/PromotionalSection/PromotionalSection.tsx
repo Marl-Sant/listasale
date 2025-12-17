@@ -2,24 +2,24 @@
 
 export default function PromotionalSection() {
   return (
-    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9 xl:mb-25 xl:mt-20">
-      <div className="md:flex md:flex-row md:gap-6">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 md:mb-10 lg:mb-12 xl:mb-20 mt-20">
+      <div className="md:flex md:flex-row md:items-stretch md:gap-4 lg:gap-6">
         {/* Left Side */}
-        <div className="flex-1 md:flex md:flex-row bg-[#693073] md:rounded-l-3xl overflow-hidden promotional-card">
+        <div className="flex-1 md:flex md:flex-row bg-[#693073] md:rounded-l-3xl overflow-hidden ">
           
           {/* Left Text */}
-          <div className="flex-1 flex flex-col justify-center md:p-5 lg:p-8 xl:p-12 text-white promotional-text">
+          <div className="flex-1 flex flex-col justify-center md:p-6 lg:p-8 xl:p-12 text-white">
             <span 
-              className="md:mb-2 lg:mb-4 xl:mb-6 font-bold promotional-title md:text-lg lg:text-xl xl:text-2xl"
+              className="md:mb-3 lg:mb-4 xl:mb-6 md:text-[1.25rem] lg:text-[1.375rem] xl:text-[1.5rem]"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
-                fontWeight: '600'
+                fontWeight: '700'
               }}
             >
-              Join Our List and Stay In the Loop
+              Join Our List and Stay in the Loop
             </span>
             <p 
-              className="md:mb-2 lg:mb-4 xl:mb-6 promotional-body md:text-sm lg:text-base xl:text-lg"
+              className="md:mb-4 lg:mb-5 xl:mb-6 md:text-[0.9375rem] lg:text-[1.0625rem] xl:text-[1.125rem]"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
                 fontWeight: '400'
@@ -27,19 +27,22 @@ export default function PromotionalSection() {
             >
               Sign up to get alerts for new estate sales, online deals, and hidden local finds. We'll send you updates so you never miss something special. Your next great discovery might be one email away.
             </p>
-            <button
-              className="btn btn-primary text-white border-none hover:bg-[#0f7bc7] transition-colors py-2 promotional-button"
-              style={{ 
-                fontFamily: 'var(--font-rig-sans)',
-                fontWeight: '600'
-              }}
-            >
-              Sign Up Now
-            </button>
+            <div className="flex justify-center mt-4">
+              <button
+                className="btn btn-primary text-white !font-bold border-none hover:bg-[#0f7bc7] transition-colors md:!text-[1.25rem] lg:!text-[1.375rem] xl:!text-[1.5rem] flex items-center justify-center py-3 w-3/4"
+                style={{ 
+                  fontFamily: 'var(--font-rig-sans)',
+                  textAlign: 'center',
+                  lineHeight: '1'
+                }}
+                >
+                Sign Up Now
+              </button>
+            </div>
           </div>
           
           {/* Left Image */}
-          <div className="flex-1 relative">
+          <div className="flex-1 relative h-full">
             <img 
               src="/images/oldies2.jpg" 
               alt="Join our list" 
@@ -49,10 +52,10 @@ export default function PromotionalSection() {
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 md:flex md:flex-row bg-[#002861] md:rounded-r-3xl overflow-hidden promotional-card">
+        <div className="flex-1 md:flex md:flex-row bg-[#002861] md:rounded-r-3xl overflow-hidden">
          
           {/* Right Image */}
-          <div className="flex-1 relative">
+          <div className="flex-1 relative h-full">
             <img 
               src="/images/oldies.jpg" 
               alt="Hire a professional" 
@@ -61,18 +64,18 @@ export default function PromotionalSection() {
           </div>
           
           {/* Right Text */}
-          <div className="flex-1 flex flex-col justify-center md:p-5 lg:p-8 xl:p-12 text-white promotional-text">
+          <div className="flex-1 flex flex-col justify-center md:p-6 lg:p-8 xl:p-12 text-white">
             <span 
-              className="md:mb-2 lg:mb-4 xl:mb-6 font-bold promotional-title md:text-lg lg:text-xl xl:text-2xl"
+              className="md:mb-3 lg:mb-4 xl:mb-6 md:text-[1.25rem] lg:text-[1.375rem] xl:text-[1.5rem]"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
-                fontWeight: '600',
+                fontWeight: '700'
               }}
             >
               Hire a Trusted Estate Sale Professional
             </span>
             <p 
-              className="md:mb-2 lg:mb-4 xl:mb-6 promotional-body md:text-sm lg:text-base xl:text-lg"
+              className="md:mb-4 lg:mb-5 xl:mb-6 md:text-[0.9375rem] lg:text-[1.0625rem] xl:text-[1.125rem]"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
                 fontWeight: '400'
@@ -80,15 +83,18 @@ export default function PromotionalSection() {
             >
               Whether you're downsizing, handling an inheritance, or moving, a professional can make the process far easier. We'll match you with reliable estate sale companies who manage every detail for you.
             </p>
-            <button
-              className="btn btn-primary text-white border-none hover:bg-[#0c8fc7] transition-colors py-2 promotional-button"
+            <div className="flex justify-center mt-4">
+              <button
+              className="btn btn-primary text-white !font-bold border-none hover:bg-[#0c8fc7] transition-colors md:!text-[1.25rem] lg:!text-[1.375rem] xl:!text-[1.5rem] flex items-center justify-center py-3 w-3/4"
               style={{ 
                 fontFamily: 'var(--font-rig-sans)',
-                fontWeight: '600',
+                textAlign: 'center',
+                lineHeight: '1'
               }}
-            >
+              >
               Hire a Pro
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
