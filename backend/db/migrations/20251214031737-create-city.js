@@ -1,9 +1,7 @@
 'use strict';
 /** @type {import('sequelize-cli').Migration} */
 
-let options = {
-  schema: ""
-};
+let options = {};
 if (process.env.NODE_ENV === 'production') options.schema = process.env.SCHEMA;
 
 module.exports = {
@@ -28,7 +26,9 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex(options.schema ? `${options.schema}.Cities` : 'Cities', ['name', 'state', 'country'], {
+    await queryInterface.addIndex(
+      { tableName: 'Cities', schema: options.schema },
+      ['name', 'state', 'country'], {
       name: 'idx_cities_name_state_country',
       unique: true,
       ...options
