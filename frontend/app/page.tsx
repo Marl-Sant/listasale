@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero Image */}
-      <div className="relative w-full aspect-video overflow-hidden flex flex-col items-center justify-center">
+      <div className="relative w-full aspect-video overflow-hidden flex flex-col items-center justify-center md:mb-10 xl:mb-20">
         <img 
           src="/images/firstHomeImage.jpg" 
           alt="List A Sale" 
@@ -27,24 +27,25 @@ export default function HomePage() {
         
         {/* Hero Text Section */}
         <div 
-          className="absolute md:top-[5%] lg:top-[10%] xl:top-[10%] left-0 right-0 text-center text-white w-full max-w-full px-4" 
+          className="absolute md:top-[5%] lg:top-[10%] xl:top-[15%] left-0 right-0 text-center text-white w-full max-w-full px-4" 
           style={{ fontFamily: 'var(--font-darkmode)' }}
         >
           <div className="flex flex-col items-center">
-            <div className="md:mt-6 lg:mt-8 xl:mt-20 text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] font-bold">
-              <span className="whitespace-nowrap">Let's find your next</span>
-              <span className="mt-3 md:mt-6 lg:mt-8 xl:mt-10 block">hidden treasure</span>
+            <div className="text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] font-bold md:w-[580px] lg:w-[700px] xl:w-[1050px]"
+            style={{ fontFamily: 'var(--font-darkmode)' }}
+            >
+              <span>Let's find your next hidden treasure</span>
             </div>
-            
+
             <div 
-              className="mt-6 lg:text-3xl xl:text-[2.333rem] font-bold md:w-[350px] lg:w-[450px] xl:w-[550px]"
+              className="mt-6 md:text-[2rem] lg:text-[2.167rem] xl:text-[2.333rem] font-bold md:w-[470px] lg:w-[510px] xl:w-[550px]"
               style={{ fontFamily: 'var(--font-rig-sans)' }}
             >
               <span>A smarter way to search for estate sales and vintage goods</span>
             </div>
 
             {/* Buttons Section */}
-            <div className="flex gap-4 md:gap-6 lg:gap-7 xl:gap-8 flex-wrap justify-center mt-6 md:mt-8 lg:mt-10 xl:mt-12">
+            <div className="flex gap-4 md:gap-6 lg:gap-7 xl:gap-8 flex-wrap justify-center mt-6">
               <button 
                 className="btn btn-primary btn-lg md:w-[160px] md:h-[40px] lg:w-[180px] lg:h-[45px] xl:w-[240px] xl:h-[55px] !text-sm md:!text-base lg:!text-lg xl:!text-[2rem] flex items-center justify-center !p-0" 
                 style={{ 
@@ -70,7 +71,7 @@ export default function HomePage() {
             </div>
 
             {/* Search Bar Section */}
-            <div className="mt-6 md:mt-8 lg:mt-10 xl:mt-12 w-full md:w-4/5 lg:w-3/4 xl:w-2/3">
+            <div className="mt-8 w-full md:w-4/5 lg:w-3/4 xl:w-2/3">
               <div className="input-group md:h-12 lg:h-14 xl:h-16">
                 <input 
                   type="search" 

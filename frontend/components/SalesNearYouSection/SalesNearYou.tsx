@@ -117,7 +117,7 @@ export default function NearYouSection() {
             style={{ 
               textDecoration: 'none', 
               color: 'black',
-              boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'
+              boxShadow: '0 0 25px rgba(0, 0, 0, 0.2)'
             }}
           >
             {/* Favorite Button */}
@@ -151,8 +151,11 @@ export default function NearYouSection() {
             {/* Main Image */}
             <div className="relative flex items-center py-4 min-w-0 flex-shrink-0">
               <div 
-                className="relative overflow-hidden w-40 md:w-55 lg:w-80 xl:w-90" 
-                style={{ marginLeft: '1.5rem', aspectRatio: '19/16' }}>
+                className="relative overflow-hidden md:w-50 lg:w-70 xl:w-90" 
+                style={{ 
+                  marginLeft: '1.5rem', 
+                  aspectRatio: '1/1' 
+                }}>
                 <img 
                   src={item.image} 
                   alt={item.title} 
@@ -180,10 +183,9 @@ export default function NearYouSection() {
               
               {/* Title */}
               <span 
-                className="md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem]"
+                className="md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] font-bold"
                 style={{ 
                   fontFamily: 'var(--font-rig-sans)', 
-                  fontWeight: '700' 
                 }}
               >
                 {item.title}
@@ -193,11 +195,11 @@ export default function NearYouSection() {
               <div>
                 {item.owner && (
                   <p 
-                    className="md:text-base lg:text-xl xl:text-2xl mb-1"
+                    className="md:text-base lg:text-xl xl:text-2xl mb-1 font-semibold"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
                       color: 'gray',
-                      fontWeight: '700'
+                      
                     }}
                   >
                    by {item.owner}
@@ -251,21 +253,15 @@ export default function NearYouSection() {
               {/* Sub Images */}
               {item.subImages && item.subImages.length > 0 && (
                 <div 
-                  className="flex mt-auto overflow-x-scroll overflow-y-hidden md:gap-2 lg:gap-3 xl:gap-4 w-full"
-                  style={{ 
-                    scrollBehavior: 'smooth',
-                    WebkitOverflowScrolling: 'touch',
-                    msOverflowStyle: 'scrollbar'
-                  }}
+                  className="flex mt-auto md:gap-2 lg:gap-3 xl:gap-5 w-full"
                 >
                   {item.subImages.map((subImage, index) => {
                     return (
                       <div 
                         key={index} 
-                        className="relative overflow-hidden flex-shrink-0 flex-[1_1_0]"
+                        className="relative overflow-hidden flex-[1_1_1]"
                         style={{ 
-                          aspectRatio: '9.5 / 8.5',
-                          minWidth: '20%'
+                          aspectRatio: '1/1',
                         }}
                       >
                         <img 

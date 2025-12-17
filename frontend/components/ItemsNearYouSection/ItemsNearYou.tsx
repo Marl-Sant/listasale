@@ -157,7 +157,9 @@ export default function ItemsNearYouSection() {
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-full object-cover"
-                />
+                  style={{ 
+                    aspectRatio: '1/1' 
+                  }}/>
                 
               {/* Favorite Button */}
               <button
@@ -224,7 +226,7 @@ export default function ItemsNearYouSection() {
 
                 {/* Location */}
                 <p 
-                  className="md:mb-2 md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl font-regular"
+                  className="md:mb-2 text-base xl:text-[1.167rem font-regular"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
                     color: 'gray'

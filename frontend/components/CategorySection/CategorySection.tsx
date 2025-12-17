@@ -21,7 +21,7 @@ export default function CategorySection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-4 md:px-9 lg:px-9 pt-12 md:mb-10 xl:mb-20">
+    <section className="max-w-[1440px] mx-auto px-4 md:mb-10 xl:mb-20">
       
       {/* Shop By Category Title */}
       <div className="flex justify-center">
@@ -38,7 +38,7 @@ export default function CategorySection() {
       </div>
       
       {/* Shop By Category Items */}
-      <div className="flex flex-wrap justify-center xl:gap-10 md:gap-6">
+      <div className="flex flex-wrap justify-center md:gap-7 lg:gap-10 xl:gap-15">
         {categories.map((category) => (
           <Link 
             key={category.id}
