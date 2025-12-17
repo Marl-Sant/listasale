@@ -31,13 +31,13 @@ export default function HomePage() {
           style={{ fontFamily: 'var(--font-darkmode)' }}
         >
           <div className="flex flex-col items-center">
-            <div className="text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] font-bold">
+            <div className="md:mt-6 lg:mt-8 xl:mt-20 text-3xl md:text-6xl lg:text-7xl xl:text-[6.667rem] font-bold">
               <span className="whitespace-nowrap">Let's find your next</span>
               <span className="mt-3 md:mt-6 lg:mt-8 xl:mt-10 block">hidden treasure</span>
             </div>
             
             <div 
-              className="text-base md:text-2xl lg:text-3xl xl:text-[2.333rem] font-bold mt-6 md:w-[400px] lg:w-[550px] xl:w-[700px]"
+              className="mt-6 lg:text-3xl xl:text-[2.333rem] font-bold md:w-[350px] lg:w-[450px] xl:w-[550px]"
               style={{ fontFamily: 'var(--font-rig-sans)' }}
             >
               <span>A smarter way to search for estate sales and vintage goods</span>
