@@ -51,8 +51,8 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex('EstateSales', ['creatorAccountId'], { name: 'idx_estate_sales_creator', ...options });
-    await queryInterface.addIndex('EstateSales', ['zipCode'], { name: 'idx_estate_sales_zip', ...options });
+    await queryInterface.addIndex({ tableName: 'EstateSales', schema: options.schema }, ['creatorAccountId'], { name: 'idx_estate_sales_creator', ...options });
+    await queryInterface.addIndex({ tableName: 'EstateSales', schema: options.schema }, ['zipCode'], { name: 'idx_estate_sales_zip', ...options });
   },
 
   async down(queryInterface) {

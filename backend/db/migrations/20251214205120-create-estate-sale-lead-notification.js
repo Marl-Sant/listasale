@@ -41,8 +41,8 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex('EstateSaleLeadNotifications', ['leadId'], { name: 'idx_lead_notifs_leadId', ...options });
-    await queryInterface.addIndex('EstateSaleLeadNotifications', ['businessId'], { name: 'idx_lead_notifs_businessId', ...options });
+    await queryInterface.addIndex({ tableName: 'EstateSaleLeadNotifications', schema: options.schema }, ['leadId'], { name: 'idx_lead_notifs_leadId', ...options });
+    await queryInterface.addIndex({ tableName: 'EstateSaleLeadNotifications', schema: options.schema }, ['businessId'], { name: 'idx_lead_notifs_businessId', ...options });
   },
 
   async down(queryInterface) {

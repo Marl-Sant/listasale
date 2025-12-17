@@ -44,8 +44,8 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex('ItemListings', ['creatorAccountId'], { name: 'idx_item_listings_creator', ...options });
-    await queryInterface.addIndex('ItemListings', ['status'], { name: 'idx_item_listings_status', ...options });
+    await queryInterface.addIndex({ tableName: 'ItemListings', schema: options.schema }, ['creatorAccountId'], { name: 'idx_item_listings_creator', ...options });
+    await queryInterface.addIndex({ tableName: 'ItemListings', schema: options.schema }, ['status'], { name: 'idx_item_listings_status', ...options });
   },
 
   async down(queryInterface) {

@@ -39,8 +39,8 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex('CreditTransactions', ['accountId'], { name: 'idx_credit_tx_accountId', ...options });
-    await queryInterface.addIndex('CreditTransactions', ['creditTypeId'], { name: 'idx_credit_tx_creditTypeId', ...options });
+    await queryInterface.addIndex({ tableName: 'CreditTransactions', schema: options.schema }, ['accountId'], { name: 'idx_credit_tx_accountId', ...options });
+    await queryInterface.addIndex({ tableName: 'CreditTransactions', schema: options.schema }, ['creditTypeId'], { name: 'idx_credit_tx_creditTypeId', ...options });
   },
 
   async down(queryInterface) {

@@ -29,7 +29,7 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex('EstateSaleImages', ['estateSaleId'], { name: 'idx_estate_sale_images_sale', ...options });
+    await queryInterface.addIndex({ tableName: 'EstateSaleImages', schema: options.schema }, ['estateSaleId'], { name: 'idx_estate_sale_images_sale', ...options });
   },
 
   async down(queryInterface) {

@@ -34,7 +34,11 @@ module.exports = {
       options
     );
 
-    await queryInterface.addIndex('ZipCodesExclusive', ['ownerId'], { name: 'idx_zip_exclusive_ownerId', ...options });
+    await queryInterface.addIndex(
+      { tableName: 'ZipCodesExclusive', schema: options.schema },
+      ['ownerId'], 
+      { name: 'idx_zip_exclusive_ownerId', 
+      ...options });
   },
 
   async down(queryInterface) {
