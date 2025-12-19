@@ -21,20 +21,24 @@ export default function CategorySection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-12">
+    <section className="max-w-[1440px] mx-auto px-4 md:mb-10 xl:mb-20">
       
       {/* Shop By Category Title */}
       <div className="flex justify-center">
         <span 
-            className="md:text-xl lg:text-2xl xl:text-3xl font-bold mb-8"
-            style={{ fontFamily: 'var(--font-darkmode)', textAlign: 'center', color: '#693073' }}
+            className="md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-10 md:mb-12"
+            style={{ 
+              fontFamily: 'var(--font-darkmode)', 
+              textAlign: 'center', 
+              color: '#693073' 
+            }}
             >
             Shop By Category
         </span>
       </div>
       
       {/* Shop By Category Items */}
-      <div className="flex flex-wrap justify-center xl:gap-10 md:gap-6">
+      <div className="flex flex-wrap justify-center md:gap-7 lg:gap-10 xl:gap-15">
         {categories.map((category) => (
           <Link 
             key={category.id}

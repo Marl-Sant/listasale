@@ -90,13 +90,16 @@ export default function NearYouSection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-5 md:px-9 lg:px-9 py-8">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-9 lg:px-9 md:mb-10 xl:mb-20">
   
       {/* Near You Title */}
       <div className="flex">
         <span 
-          className="md:text-xl lg:text-2xl xl:text-3xl mb-8"
-          style={{ fontFamily: 'var(--font-darkmode)', color: '#693073' }}
+          className="md:text-2xl lg:text-3xl xl:text-4xl mb-10 md:mb-12"
+          style={{ 
+            fontFamily: 'var(--font-darkmode)', 
+            color: '#693073' 
+          }}
         >
           Sales Near You
         </span>
@@ -114,7 +117,7 @@ export default function NearYouSection() {
             style={{ 
               textDecoration: 'none', 
               color: 'black',
-              boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'
+              boxShadow: '0 0 25px rgba(0, 0, 0, 0.2)'
             }}
           >
             {/* Favorite Button */}
@@ -148,8 +151,11 @@ export default function NearYouSection() {
             {/* Main Image */}
             <div className="relative flex items-center py-4 min-w-0 flex-shrink-0">
               <div 
-                className="relative overflow-hidden w-40 md:w-55 lg:w-80 xl:w-90" 
-                style={{ marginLeft: '1.5rem', aspectRatio: '19/16' }}>
+                className="relative overflow-hidden md:w-50 lg:w-70 xl:w-90" 
+                style={{ 
+                  marginLeft: '1.5rem', 
+                  aspectRatio: '1/1' 
+                }}>
                 <img 
                   src={item.image} 
                   alt={item.title} 
@@ -166,19 +172,21 @@ export default function NearYouSection() {
                     shapeRendering: 'crispEdges'
                   }}
                 >
-                  <HiCamera className="w-4 h-4" />
-                  <span>{item.photoCount}</span>
+                  <HiCamera className="md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+                  <span className="md:text-base lg:text-[1.167rem] xl:text-[1.3rem]">{item.photoCount}</span>
                 </div>
               </div>
             </div>
             
             {/* Right Section */}
-            <div className="flex-1 flex flex-col p-4 relative">
+            <div className="flex-1 flex flex-col p-4 relative min-w-0">
               
               {/* Title */}
               <span 
-                className="md:text-lg lg:text-xl xl:text-2xl font-bold"
-                style={{ fontFamily: 'var(--font-rig-sans)' }}
+                className="md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] font-bold"
+                style={{ 
+                  fontFamily: 'var(--font-rig-sans)', 
+                }}
               >
                 {item.title}
               </span>
@@ -187,10 +195,11 @@ export default function NearYouSection() {
               <div>
                 {item.owner && (
                   <p 
-                    className="md:text-sm lg:text-base xl:text-lg font-bold mb-1"
+                    className="md:text-base lg:text-xl xl:text-2xl mb-1 font-semibold"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
-                      color: 'gray'
+                      color: 'gray',
+                      
                     }}
                   >
                    by {item.owner}
@@ -204,11 +213,11 @@ export default function NearYouSection() {
                       <img 
                         src="/images/location.png" 
                         alt="Location" 
-                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-4 xl:h-4 self-center" 
+                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 self-center" 
                         style={{ shapeRendering: 'crispEdges' }}
                       />
                       <p 
-                        className="md:text-sm lg:text-base xl:text-lg m-0 leading-none"
+                        className="md:text-base lg:text-xl xl:text-2xl m-0 leading-none"
                         style={{ 
                           fontFamily: 'var(--font-rig-sans)',
                           color: '#1288e0'
@@ -224,11 +233,11 @@ export default function NearYouSection() {
                       <img 
                         src="/images/date.png" 
                         alt="Calendar" 
-                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-4 xl:h-4 self-center" 
+                        className="md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 self-center" 
                         style={{ shapeRendering: 'crispEdges' }}
                       />
                       <p 
-                        className="md:text-sm lg:text-base xl:text-lg m-0 leading-none"
+                        className="md:text-base lg:text-xl xl:text-2xl m-0 leading-none"
                         style={{ 
                           fontFamily: 'var(--font-rig-sans)',
                           color: '#692073'
@@ -243,20 +252,17 @@ export default function NearYouSection() {
 
               {/* Sub Images */}
               {item.subImages && item.subImages.length > 0 && (
-                <div className="flex justify-between gap-1 mt-auto overflow-x-auto">
-                  {item.subImages.slice(0, 5).map((subImage, index) => {
-                    const getDisplayClasses = () => {
-                      if (index < 3) return '';
-                      if (index === 3) return 'hidden lg:block';
-                      if (index === 4) return 'hidden xl:block';
-                      return 'hidden';
-                    };
-                    
+                <div 
+                  className="flex mt-auto md:gap-2 lg:gap-3 xl:gap-5 w-full"
+                >
+                  {item.subImages.map((subImage, index) => {
                     return (
                       <div 
                         key={index} 
-                        className={`relative overflow-hidden w-20 md:w-26 lg:w-32 xl:w-40 ${getDisplayClasses()}`}
-                        style={{ aspectRatio: '9.5/8.5' }}
+                        className="relative overflow-hidden flex-[1_1_1]"
+                        style={{ 
+                          aspectRatio: '1/1',
+                        }}
                       >
                         <img 
                           src={subImage} 
@@ -272,20 +278,6 @@ export default function NearYouSection() {
           </Link>
         );
       })}
-      </div>
-
-      {/* Explore All Button */}
-      <div className="flex justify-center mt-12">
-        <button 
-          type="button" 
-          className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
-          style={{ 
-            fontFamily: 'var(--font-rig-sans)' ,
-            fontSize: '18px'
-          }}
-        >
-          Explore All
-        </button>
       </div>
 
     </section>

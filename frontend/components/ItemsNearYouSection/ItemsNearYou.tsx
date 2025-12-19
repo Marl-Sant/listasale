@@ -125,11 +125,11 @@ export default function ItemsNearYouSection() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-9 lg:px-9 md:mb-10 xl:mb-20">
       {/* Section Title */}
-      <div className="flex md:mb-8">
+      <div className="flex">
         <span 
-          className="md:text-xl lg:text-2xl xl:text-3xl font-bold"
+          className="md:text-xl lg:text-2xl xl:text-3xl font-bold mb-10 md:mb-12"
           style={{ fontFamily: 'var(--font-darkmode)', color: '#693073' }}
         >
           Items Near You
@@ -137,7 +137,7 @@ export default function ItemsNearYouSection() {
       </div>
 
       {/* Items Grid */}
-      <div className="flex flex-wrap md:gap-6 justify-center">
+      <div className="flex flex-wrap md:gap-6">
         {items.map((item) => {
           const isFavorite = favorites.has(item.id);
           return (
@@ -157,7 +157,9 @@ export default function ItemsNearYouSection() {
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-full object-cover"
-                />
+                  style={{ 
+                    aspectRatio: '1/1' 
+                  }}/>
                 
               {/* Favorite Button */}
               <button
@@ -196,9 +198,14 @@ export default function ItemsNearYouSection() {
                   <img 
                     src={item.label === 'local' ? '/images/pickUp.png' : '/images/delivery.png'} 
                     alt={item.label === 'local' ? 'Pick Up' : 'Delivery'}
-                    className="w-4 h-4"
+                    className="w-5 h-5"
                   />
-                  <span style={{ fontFamily: 'var(--font-rig-sans)', fontWeight: '700' }}>
+                  <span 
+                    className="md:text-base lg:text-[1.167rem] xl:text-[1.333rem]"
+                  style={{ 
+                    fontFamily: 'var(--font-rig-sans)', 
+                    fontWeight: '700' 
+                    }}>
                     {item.label === 'local' ? 'Local Pick Up Only' : 'Shipping Available'}
                   </span>
                 </div>
@@ -208,24 +215,20 @@ export default function ItemsNearYouSection() {
               <div className="flex flex-col flex-1 md:px-2">
                 
                 {/* Title */}
-                <h3 
-                  className="md:mb-0"
+                <span 
+                  className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl font-bold"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
-                    fontWeight: '700',
-                    fontSize: '18pt'
                   }}
                 >
                   {item.title}
-                </h3>
+                </span>
 
                 {/* Location */}
                 <p 
-                  className="md:mb-2"
+                  className="md:mb-2 text-base xl:text-[1.167rem font-regular"
                   style={{ 
                     fontFamily: 'var(--font-rig-sans)',
-                    fontWeight: '400',
-                    fontSize: '18pt',
                     color: 'gray'
                   }}
                 >
@@ -234,20 +237,16 @@ export default function ItemsNearYouSection() {
 
                 {/* Price and Time Left */}
                 <div className="flex items-baseline justify-between md:pt-4 mt-auto">
-                  <span 
+                  <span className='md:text-[1.667rem] lg:text-[1.833rem] xl:text-[2rem] font-bold'
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
-                      fontWeight: '700',
-                      fontSize: '24pt'
                     }}
                   >
                     {item.price}
                   </span>
-                  <span 
+                  <span className="md:text-[1.167rem] lg:text-[1.333rem] xl:text-2xl font-regular"
                     style={{ 
                       fontFamily: 'var(--font-rig-sans)',
-                      fontWeight: '400',
-                      fontSize: '16pt'
                     }}
                   >
                     {item.timeLeft}
@@ -259,19 +258,6 @@ export default function ItemsNearYouSection() {
         })}
       </div>
 
-      {/* Explore All Button */}
-      <div className="flex justify-center md:mt-12">
-        <button 
-          type="button" 
-          className="btn btn-primary btn-lg md:w-[160px] lg:w-[180px] xl:w-[200px]" 
-          style={{ 
-            fontFamily: 'var(--font-rig-sans)' ,
-            fontSize: '18px'
-          }}
-        >
-          Explore All
-        </button>
-      </div>
     </section>
   );
 }

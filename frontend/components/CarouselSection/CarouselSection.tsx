@@ -63,8 +63,8 @@ export default function CarouselSection() {
   const currentSlide = slides[currentIndex];
 
   return (
-    <section className="max-w-[1440px] mx-auto md:px-9 lg:px-9 md:-mt-10 lg:-mt-15 xl:-mt-25 md:mb-10 xl:mb-20">
-      <div className="relative w-full aspect-[18/9]">
+    <section className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 md:mb-10 lg:mb-12 xl:mb-20 mt-20">
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
         
         {/* Background Image */}
         <img 
@@ -80,16 +80,20 @@ export default function CarouselSection() {
 
         {/* Text Overlay */}
         <div className="absolute bottom-0 left-0 right-0 px-4 md:px-8 lg:px-12 pb-8 md:pb-12 lg:pb-16">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="md:w-[600px] lg:w-[900px] xl:w-[1200px] mx-auto text-center">
             <h2 
-              className="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 lg:mb-6"
-              style={{ fontFamily: 'var(--font-darkmode)' }}
+              className="text-white md:!text-5xl lg:!text-[3.167rem] xl:!text-[3.333rem] font-bold mb-3 md:mb-4 lg:mb-6"
+              style={{ 
+                fontFamily: 'var(--font-darkmode)' 
+              }}
             >
               {currentSlide.heading}
             </h2>
             <p 
-              className="text-white md:text-base lg:text-xl xl:text-2xl mb-4 md:mb-6"
-              style={{ fontFamily: 'var(--font-rig-sans)' }}
+              className="text-white md:text-base lg:text-xl xl:text-[2rem] mb-4 md:mb-6"
+              style={{ 
+                fontFamily: 'var(--font-rig-sans)' 
+              }}
             >
               {currentSlide.description}
             </p>
@@ -99,23 +103,29 @@ export default function CarouselSection() {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute md:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-10 hover:bg-gray-500 transition-colors md:p-3 shadow-lg"
+          className="absolute md:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-10 hover:bg-gray-500 transition-colors md:p-3"
           aria-label="Previous slide"
         >
           <HiChevronLeft 
-            className="md:w-8 md:h-8 lg:w-10 lg:h-10" 
-            style={{ strokeWidth: '2', stroke: 'white' }}
+            className="md:w-15 md:h-15 lg:w-20 lg:h-20" 
+            style={{ 
+              strokeWidth: '2', 
+              stroke: 'white' 
+            }}
           />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute md:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-10 hover:bg-gray-500 transition-colors md:p-3 shadow-lg"
+          className="absolute md:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-10 hover:bg-gray-500 transition-colors md:p-3"
           aria-label="Next slide"
         >
           <HiChevronRight 
-            className="md:w-8 md:h-8 lg:w-10 lg:h-10" 
-            style={{ strokeWidth: '2', stroke: 'white' }}
+            className="md:w-15 md:h-15 lg:w-20 lg:h-20" 
+            style={{ 
+              strokeWidth: '2',
+               stroke: 'white' 
+              }}
           />
         </button>
 
