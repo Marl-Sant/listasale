@@ -3,10 +3,14 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import {thunk} from 'redux-thunk';
 import sessionReducer from './session';
+import estateSalesReducer from './estateSales';
+import itemListingsReducer from './itemListings';
 
 // Add slice reducers here as you build them
 const rootReducer = combineReducers({
   session: sessionReducer,
+  estateSales: estateSalesReducer,
+  itemListings: itemListingsReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

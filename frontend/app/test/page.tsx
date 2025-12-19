@@ -6,6 +6,8 @@ import StripeTestButton from '@/components/StripeTestButton/StripeTestButton';
 import StripeSubTestButton from '@/components/StripeSubTestButton/StripeSubTestButton';
 import StripeManageSubButton from '@/components/StripeManageSubButton/StripeManageSubButton';
 import LocationAutocompleteTester from '@/components/LocationAutocompleteTester/LocationAutocompleteTester';
+import EstateSalesCrudTester from '@/components/EstateSalesCrudTester/EstateSalesCrudTester';
+import ItemListingsCrudTester from '@/components/ItemListingsCrudTester/ItemListingsCrudTester';
 
 
 
@@ -57,6 +59,12 @@ export default function TestPage() {
                 ) : (
                 <StripeSubTestButton />
                 )}
+              </div>
+
+              
+              <div>
+                <EstateSalesCrudTester />
+                <ItemListingsCrudTester />
               </div>
             </>
           ) : (
